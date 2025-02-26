@@ -1,0 +1,48 @@
+/**
+ * Created by Kostiantyn_Marchenko on 2/25/2025.
+ */
+
+public class CurtainTriggerHandler {
+    public static void run(List<Curtain__c> newList, List<Curtain__c> oldList,
+            Map<Id, Curtain__c> newMap, Map<Id, Curtain__c> oldMap,
+            Boolean isBefore, Boolean isAfter, Boolean isInsert,
+            Boolean isUpdate, Boolean isDelete, Boolean isUndelete) {
+        
+        if (isBefore) {
+            if (isInsert) beforeInsert(newList);
+            if (isUpdate) beforeUpdate(newList, oldMap);
+            if (isDelete) beforeDelete(oldList);
+        }
+        
+        if (isAfter) {
+            if (isInsert) afterInsert(newList);
+            if (isUpdate) afterUpdate(newList, oldMap);
+            if (isDelete) afterDelete(oldList);
+            if (isUndelete) afterUndelete(newList);
+        }
+    }
+    
+    public static void beforeInsert(List<Curtain__c> newList) {
+    }
+    
+    public static void beforeUpdate(List<Curtain__c> newList, Map<Id, Curtain__c> oldMap) {
+        System.debug('beforeUpdate');
+        CurtainTriggerHelper.recalculateFields(newList[0]);
+    }
+    
+    public static void beforeDelete(List<Curtain__c> oldList) {
+    }
+    
+    public static void afterInsert(List<Curtain__c> newList) {
+    }
+    
+    public static void afterUpdate(List<Curtain__c> newList, Map<Id, Curtain__c> oldMap) {
+        System.debug('afterUpdate');
+    }
+    
+    public static void afterDelete(List<Curtain__c> oldList) {
+    }
+    
+    public static void afterUndelete(List<Curtain__c> newList) {
+    }
+}
