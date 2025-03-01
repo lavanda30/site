@@ -18,12 +18,12 @@
                             value={name}
                             class="input-with-clear"
                     ></lightning-input>
-<!--                    <button-->
-<!--                            class="clear-button"-->
-<!--                            onclick={clearField}-->
-<!--                            data-field="name"-->
-<!--                            title="Очистити поле">-->
-<!--                    </button>-->
+                    <!--                    <button-->
+                    <!--                            class="clear-button"-->
+                    <!--                            onclick={clearField}-->
+                    <!--                            data-field="name"-->
+                    <!--                            title="Очистити поле">-->
+                    <!--                    </button>-->
 
                     <lightning-input type="text"
                                      label='Мобільнй'
@@ -117,16 +117,6 @@
                                              data-index={block.id}
                                              data-field="price">
                             </lightning-input>
-
-                            <lightning-combobox name="priceType"
-                                                label="Валюта"
-                                                value={block.priceType}
-                                                placeholder="Виберіть значення"
-                                                options={priceType}
-                                                onchange={handleInputChange}
-                                                data-index={block.id}
-                                                data-field="priceType">
-                            </lightning-combobox>
 
                             <lightning-combobox name="nisha"
                                                 label="Ніша"
@@ -268,24 +258,24 @@
 
                         <div class=column_3>
                             <div class=column_2>
-                            <lightning-input type="checkbox"
-                                             label="Навіс"
-                                             name="navis"
-                                             checked={block.navis}
-                                             onchange={handleInputChange}
-                                             data-index={block.id}
-                                             class=checkbox
-                                             data-field="navis">
-                            </lightning-input>
-                            <lightning-input type="checkbox"
-                                             label="Виїзд"
-                                             name="viizd"
-                                             class=checkbox
-                                             checked={block.viizd}
-                                             onchange={handleInputChange}
-                                             data-index={block.id}
-                                             data-field="viizd">
-                            </lightning-input>
+                                <lightning-input type="checkbox"
+                                                 label="Навіс"
+                                                 name="navis"
+                                                 checked={block.navis}
+                                                 onchange={handleInputChange}
+                                                 data-index={block.id}
+                                                 class=checkbox
+                                                 data-field="navis">
+                                </lightning-input>
+                                <lightning-input type="checkbox"
+                                                 label="Виїзд"
+                                                 name="viizd"
+                                                 class=checkbox
+                                                 checked={block.viizd}
+                                                 onchange={handleInputChange}
+                                                 data-index={block.id}
+                                                 data-field="viizd">
+                                </lightning-input>
                             </div>
                             <lightning-combobox name='navisPrice'
                                                 label="Ціна навісу"
@@ -325,11 +315,8 @@
                 </lightning-button>
             </div>
             <div class=second-container>
-                <div class="pictureContainer">
-                    <span class="dimension-high">320 cм</span>
-                    <span class="dimension-wight">321 cм</span>
-                    <img class="picture" src={curtainUrl} alt="Curtain"/>
-                </div>
+                <c-display-result></c-display-result>
+
             </div>
         </div>
     </lightning-card>

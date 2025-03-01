@@ -98,11 +98,6 @@ export default class CurtainForm extends LightningElement {
         { value: 'luversna', label: 'Люверсна' },
     ];
 
-    priceType = [
-        { value: 'грн.', label: 'грн.' },
-        { value: 'у.о.', label: 'опт, у.о' },
-    ];
-
     quantity = [
         { value: '1', label: '1 штука' },
         { value: '2', label: '2 штуки' },
@@ -205,7 +200,6 @@ export default class CurtainForm extends LightningElement {
             type: lastBlock.type || '',
             label: lastBlock.label || '',
             price: lastBlock.price || '',
-            priceType: lastBlock.priceType || '',
             nisha: lastBlock.nisha || '',
             carniz: lastBlock.carniz || '',
             diameter: lastBlock.diameter || '',
@@ -233,18 +227,18 @@ export default class CurtainForm extends LightningElement {
     // Сохранение данных
     handleSaveButton() {
         // Получаем ссылки на обязательные поля
-        const nameField = this.template.querySelector('lightning-input[data-field="name"]');
+        // const nameField = this.template.querySelector('lightning-input[data-field="name"]');
         const phoneField = this.template.querySelector('lightning-input[data-field="phone"]');
 
         // Проверяем валидность каждого из полей
         let isValid = true;
-        if (!nameField.value) {
-            nameField.setCustomValidity("Будь ласка, введіть ім'я");
-            nameField.reportValidity();
-            isValid = false;
-        } else {
-            nameField.setCustomValidity("");
-        }
+        // if (!nameField.value) {
+        //     nameField.setCustomValidity("Будь ласка, введіть ім'я");
+        //     nameField.reportValidity();
+        //     isValid = false;
+        // } else {
+        //     nameField.setCustomValidity("");
+        // }
 
         if (!phoneField.value) {
             phoneField.setCustomValidity("Будь ласка, введіть мобільний телефон");
@@ -267,8 +261,15 @@ export default class CurtainForm extends LightningElement {
         };
 
         sendJSONToApex({jsonDataFromForm: JSON.stringify(payload)})
-            .then(() => {
-                this.showToast('Успіх!', 'Контакт створено успішно', 'success');
+            .then((result) => {
+                console.log(result);
+                if(result.length == 0) {
+                    this.showToast('Помилка', 'Не вдалося зберегти дані', 'error');
+                    console.log(error);
+                } else {
+                    this.showToast('Успіх!', 'Дані створено успішно', 'success');
+                }
+
             })
             .catch((error) => {
                 console.error('Ошибка:', error);

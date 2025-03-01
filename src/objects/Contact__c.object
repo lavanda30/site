@@ -193,6 +193,14 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Expenses__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Витрати</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>GeneralDiscount__c</fullName>
         <label>Спеціальні умови</label>
         <required>false</required>
@@ -204,57 +212,57 @@
             <valueSetDefinition>
                 <sorted>false</sorted>
                 <value>
-                    <fullName>2 %</fullName>
+                    <fullName>2</fullName>
                     <default>false</default>
                     <label>2 %</label>
                 </value>
                 <value>
-                    <fullName>3 %</fullName>
+                    <fullName>3</fullName>
                     <default>false</default>
                     <label>3 %</label>
                 </value>
                 <value>
-                    <fullName>4 %</fullName>
+                    <fullName>4</fullName>
                     <default>false</default>
                     <label>4 %</label>
                 </value>
                 <value>
-                    <fullName>5 %</fullName>
+                    <fullName>5</fullName>
                     <default>false</default>
                     <label>5 %</label>
                 </value>
                 <value>
-                    <fullName>6 %</fullName>
+                    <fullName>6</fullName>
                     <default>false</default>
                     <label>6 %</label>
                 </value>
                 <value>
-                    <fullName>7 %</fullName>
+                    <fullName>7</fullName>
                     <default>false</default>
                     <label>7 %</label>
                 </value>
                 <value>
-                    <fullName>8 %</fullName>
+                    <fullName>8</fullName>
                     <default>false</default>
                     <label>8 %</label>
                 </value>
                 <value>
-                    <fullName>10 %</fullName>
+                    <fullName>10</fullName>
                     <default>false</default>
                     <label>10 %</label>
                 </value>
                 <value>
-                    <fullName>13 %</fullName>
+                    <fullName>13</fullName>
                     <default>false</default>
                     <label>13 %</label>
                 </value>
                 <value>
-                    <fullName>14 %</fullName>
+                    <fullName>14</fullName>
                     <default>false</default>
                     <label>14 %</label>
                 </value>
                 <value>
-                    <fullName>15 %</fullName>
+                    <fullName>15</fullName>
                     <default>false</default>
                     <label>15 %</label>
                 </value>
@@ -271,9 +279,29 @@
         <trackTrending>false</trackTrending>
         <type>Summary</type>
     </fields>
+    <fields>
+        <fullName>SelectedCurtains__c</fullName>
+        <label>Сума вибраних штор</label>
+        <summarizedField>Curtain__c.GeneralPrice__c</summarizedField>
+        <summaryFilterItems>
+            <field>Curtain__c.Check__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Curtain__c.Contact__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
     <label>Контакт</label>
     <listViews>
         <fullName>All</fullName>
+        <columns>ClientName__c</columns>
+        <columns>NAME</columns>
+        <columns>GeneralPrice__c</columns>
+        <columns>GeneralDiscount__c</columns>
+        <columns>CREATED_DATE</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>
@@ -282,7 +310,7 @@
         <trackHistory>false</trackHistory>
         <type>Text</type>
     </nameField>
-    <pluralLabel>Contacts</pluralLabel>
+    <pluralLabel>Контакти</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>

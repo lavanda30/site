@@ -1,0 +1,41 @@
+/**
+ * Created by Kostiantyn_Marchenko on 2/27/2025.
+ */
+.column_2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px
+}
+
+.column_3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px
+}
+
+.pictureContainer {
+    position: relative;
+    height: 400px;
+    width: 400px;
+    z-index: 2;
+}
+
+.picture {
+    z-index: 1;
+}
+
+.dimension-high {
+    position: absolute;
+    transform: rotate(180deg);
+    top: 30%;
+    right: 23px;
+    color: black;
+    z-index: 3;
+    writing-mode: vertical-lr;
+}
+
+.dimension-wight {
+    position: absolute;
+    bottom: 14%;
+    right: 50%;
+}

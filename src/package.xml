@@ -1,57 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>*</members>
-        <name>ApexClass</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>ApexComponent</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>ApexPage</name>
-    </types>
-    <types>
-        <members>*</members>
+        <members>ContactTrigger</members>
         <name>ApexTrigger</name>
     </types>
     <types>
-        <members>*</members>
-        <name>AuraDefinitionBundle</name>
+        <members>LAVANDA</members>
+        <name>CustomApplication</name>
     </types>
     <types>
-        <members>*</members>
-        <name>CustomLabels</name>
-    </types>
-    <types>
-        <members>Account</members>
-        <members>Case</members>
         <members>Contact__c</members>
         <members>Curtain__c</members>
-        <members>Document</members>
-        <members>PushTopic</members>
-        <name>CustomObject</name>
+        <name>CustomTab</name>
     </types>
     <types>
-        <members>*</members>
+        <members>ContactRecordPage</members>
+        <members>CurtainRecordPage</members>
+        <members>Home_Page_Default</members>
+        <members>LAVANDA_UtilityBar</members>
         <name>FlexiPage</name>
     </types>
     <types>
-        <members>*</members>
+        <members>Contact__c-Контакт Layout</members>
+        <members>Curtain__c-Штора Layout</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>displayResult</members>
         <name>LightningComponentBundle</name>
     </types>
     <types>
-        <members>*</members>
-        <name>PermissionSet</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>PermissionSetGroup</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>Profile</name>
+        <members>unfiled$public</members>
+        <members>unfiled$public/new_report_PAQ</members>
+        <name>Report</name>
     </types>
     <version>62.0</version>
 </Package>

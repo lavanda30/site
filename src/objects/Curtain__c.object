@@ -129,7 +129,7 @@
     <actionOverrides>
         <actionName>View</actionName>
         <comment>Action override created by Lightning App Builder during activation.</comment>
-        <content>FlexiPage</content>
+        <content>CurtainRecordPage</content>
         <formFactor>Large</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
@@ -137,7 +137,7 @@
     <actionOverrides>
         <actionName>View</actionName>
         <comment>Action override created by Lightning App Builder during activation.</comment>
-        <content>FlexiPage</content>
+        <content>CurtainRecordPage</content>
         <formFactor>Small</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
@@ -160,12 +160,20 @@
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>ControlledByParent</externalSharingModel>
     <fields>
+        <fullName>AdvancePaymentReceived__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Аванс отримано</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>CarnizWigth__c</fullName>
         <externalId>false</externalId>
         <label>Ширина Карнізу (см)</label>
         <length>255</length>
         <required>false</required>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
@@ -174,7 +182,7 @@
         <fullName>Carniz__c</fullName>
         <label>Карніз</label>
         <required>false</required>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>
@@ -225,6 +233,25 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>Check__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Вибрати</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ContactDiscount__c</fullName>
+        <externalId>false</externalId>
+        <label>Знижка з контакта</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Contact__c</fullName>
         <label>Контакт</label>
         <referenceTo>Contact__c</referenceTo>
@@ -241,7 +268,7 @@
         <fullName>CurtainDiscount__c</fullName>
         <label>Спеціальні умови</label>
         <required>false</required>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>
@@ -307,6 +334,14 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>CurtainPaid__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Тканину оплачено</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>CurtainPriceSum__c</fullName>
         <externalId>false</externalId>
         <label>Ціна за тканину</label>
@@ -323,7 +358,7 @@
         <label>Ширина тканини (см)</label>
         <length>255</length>
         <required>false</required>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
@@ -366,7 +401,7 @@
         <fullName>Delivery__c</fullName>
         <label>Доставка</label>
         <required>false</required>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>
@@ -431,6 +466,18 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>Field1__c</fullName>
+        <externalId>false</externalId>
+        <formula>Contact__r.ClientName__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Ім&apos;я замовника</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>FinalPrice__c</fullName>
         <externalId>false</externalId>
         <label>Загальна сумма1</label>
@@ -447,7 +494,7 @@
         <precision>18</precision>
         <required>false</required>
         <scale>0</scale>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
     </fields>
@@ -491,7 +538,7 @@
         <label>Висота (см)</label>
         <length>255</length>
         <required>false</required>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
@@ -534,7 +581,7 @@
         <label>Назва</label>
         <length>255</length>
         <required>false</required>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
@@ -554,7 +601,7 @@
         <fullName>NavisPrice__c</fullName>
         <label>Ціна навісу</label>
         <required>false</required>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>
@@ -593,7 +640,7 @@
         <fullName>Navis__c</fullName>
         <defaultValue>false</defaultValue>
         <label>Навіс</label>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
     </fields>
@@ -636,7 +683,7 @@
         <fullName>PoshivPrice__c</fullName>
         <label>Ціна пошиву</label>
         <required>false</required>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>
@@ -662,6 +709,14 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>PostpaidReceived__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Післяоплата отримана</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>PriceType__c</fullName>
         <label>Валюта</label>
         <required>false</required>
@@ -678,7 +733,7 @@
                     <label>грн.</label>
                 </value>
                 <value>
-                    <fullName>у.о.</fullName>
+                    <fullName>уо</fullName>
                     <default>false</default>
                     <label>опт, у.о.</label>
                 </value>
@@ -691,7 +746,7 @@
         <label>Ціна тканини</label>
         <length>255</length>
         <required>false</required>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
@@ -737,6 +792,50 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Status__c</fullName>
+        <label>Статус</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>На розгляді</fullName>
+                    <default>false</default>
+                    <label>На розгляді</label>
+                </value>
+                <value>
+                    <fullName>Обрано кліентом</fullName>
+                    <default>false</default>
+                    <label>Обрано кліентом</label>
+                </value>
+                <value>
+                    <fullName>Замовлено тканину</fullName>
+                    <default>false</default>
+                    <label>Замовлено тканину</label>
+                </value>
+                <value>
+                    <fullName>В цеху</fullName>
+                    <default>false</default>
+                    <label>В цеху</label>
+                </value>
+                <value>
+                    <fullName>Очікує видачі</fullName>
+                    <default>false</default>
+                    <label>Очікує видачі</label>
+                </value>
+                <value>
+                    <fullName>Виконано</fullName>
+                    <default>false</default>
+                    <label>Виконано</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>TasmaMetrage__c</fullName>
         <externalId>false</externalId>
         <label>Метраж тасьми</label>
@@ -762,7 +861,7 @@
         <fullName>TasmaPrice__c</fullName>
         <label>Ціна тасьми</label>
         <required>false</required>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>
@@ -777,7 +876,7 @@
                 <value>
                     <fullName>110</fullName>
                     <default>false</default>
-                    <label>100 грн.</label>
+                    <label>110 грн.</label>
                 </value>
                 <value>
                     <fullName>140</fullName>
@@ -791,7 +890,7 @@
         <fullName>Tasma__c</fullName>
         <label>Тасьма</label>
         <required>false</required>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>
@@ -844,7 +943,7 @@
         <fullName>Viizd__c</fullName>
         <defaultValue>false</defaultValue>
         <label>Виїзд</label>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
     </fields>
@@ -852,7 +951,7 @@
         <fullName>Zbirka__c</fullName>
         <label>Збірка</label>
         <required>false</required>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>
@@ -915,6 +1014,13 @@
     <label>Штора</label>
     <listViews>
         <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Name__c</columns>
+        <columns>Room__c</columns>
+        <columns>Type__c</columns>
+        <columns>Meterage__c</columns>
+        <columns>GeneralPrice__c</columns>
+        <columns>Field1__c</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>
@@ -924,7 +1030,7 @@
         <trackHistory>false</trackHistory>
         <type>AutoNumber</type>
     </nameField>
-    <pluralLabel>Curtains</pluralLabel>
+    <pluralLabel>Штори</pluralLabel>
     <searchLayouts/>
     <sharingModel>ControlledByParent</sharingModel>
     <visibility>Public</visibility>

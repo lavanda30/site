@@ -5,6 +5,9 @@
 public with sharing class CurtainCalculator {
     
     public static Curtain__c calculateData(Curtain__c curtainObject) {
+        if (String.isBlank(curtainObject.PriceType__c)) {
+            curtainObject.PriceType__c = 'грн.';
+        }
         
         Contact__c parentContact = new Contact__c();
         if (!String.isBlank(curtainObject.Contact__c)) {
