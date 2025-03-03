@@ -5,9 +5,11 @@
 public with sharing class curtainFormController {
     
     @AuraEnabled
-    public static void createContact(String jsonDataFromForm) {
+    public static List<Curtain__c> createContact(String jsonDataFromForm) {
         System.debug('jsonDataFromForm ' + jsonDataFromForm);
+        List<Curtain__c> curtains = new List<Curtain__c>();
         try {
+            
             Map<String, Object> dataFromForm = (Map<String, Object>) JSON.deserializeUntyped(jsonDataFromForm);
             
             List<Contact__c> contacts = new List<Contact__c>();
@@ -26,7 +28,8 @@ public with sharing class curtainFormController {
             ];
             System.debug('existingContact ' + existingContacts);
             if (!existingContacts.isEmpty()) {
-                existingContacts[0].ClientName__c = name;
+                existingContacts[0].ClientName__c = phone;
+                existingContacts[0].Name = name;
                 existingContacts[0].Description__c += (description != null ? '; ' + description : '');
                 existingContacts[0].GeneralDiscount__c = discount;
                 existingContacts[0].Address__c = address;
@@ -36,8 +39,8 @@ public with sharing class curtainFormController {
                 contacts.add(existingContacts[0]);
             } else {
                 Contact__c newContact = new Contact__c();
-                newContact.ClientName__c = name;
-                newContact.Name = phone;
+                newContact.ClientName__c = phone;
+                newContact.Name = name;
                 newContact.GeneralDiscount__c = discount;
                 newContact.Description__c = description;
                 newContact.Address__c = address;
@@ -50,7 +53,6 @@ public with sharing class curtainFormController {
             
             List<Object> blocks = (List<Object>) dataFromForm.get('blocks');
             
-            List<Curtain__c> curtains = new List<Curtain__c>();
             for (Contact__c contact : contacts) {
                 for (Object blockObj : blocks) {
                     Map<String, Object> block = (Map<String, Object>) blockObj;
@@ -62,7 +64,6 @@ public with sharing class curtainFormController {
                             Quantity__c = String.isBlank((String)block.get('quantity')) ? '1' : (String)block.get('quantity'),
                             Name__c = (String) block.get('label'),
                             Price__c = (String) block.get('price'),
-                            PriceType__c =  String.isBlank((String) block.get('priceType')) ? 'грн.' : (String) block.get('priceType'),
                             Nisha__c = (String) block.get('nisha'),
                             Carniz__c = (String) block.get('carniz'),
                             Diameter__c = (String) block.get('diameter'),
@@ -82,20 +83,23 @@ public with sharing class curtainFormController {
                             CurtainDiscount__c = (String) block.get('curtainDiscount'),
                             Contact__c = contact.Id
                     );
-                    
+                    CurtainCalculator.calculateData(curtain);
                     curtains.add(curtain);
                     System.debug('Curtains ' + curtains);
                 
                 }
             }
             
-            insert curtains;
+//            insert curtains;
             
-            System.debug('Curtains ' + curtains);
-            CurtainCalculator.calculateData(curtains[0]);
-            update curtains;
+            System.debug('Curtains ' + curtains.size());
+//            CurtainCalculator.calculateData(curtains[0]);
+            Database.insert(curtains, false);
+            
+            return curtains;
         } catch (Exception ex) {
             System.debug(ex);
+            return curtains;
         }
     }
 }

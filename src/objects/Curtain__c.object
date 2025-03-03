@@ -491,7 +491,7 @@
     <fields>
         <fullName>GeneralPrice__c</fullName>
         <label>Загальна сумма</label>
-        <precision>18</precision>
+        <precision>16</precision>
         <required>false</required>
         <scale>0</scale>
         <trackHistory>true</trackHistory>
@@ -669,6 +669,14 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>PicturesAttached__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Файл Прикріплено</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>PoshivPriceSum__c</fullName>
         <externalId>false</externalId>
         <label>Ціна за пошив</label>
@@ -804,7 +812,7 @@
                 <sorted>false</sorted>
                 <value>
                     <fullName>На розгляді</fullName>
-                    <default>false</default>
+                    <default>true</default>
                     <label>На розгляді</label>
                 </value>
                 <value>
@@ -1014,21 +1022,48 @@
     <label>Штора</label>
     <listViews>
         <fullName>All</fullName>
+        <columns>Field1__c</columns>
         <columns>NAME</columns>
         <columns>Name__c</columns>
         <columns>Room__c</columns>
         <columns>Type__c</columns>
         <columns>Meterage__c</columns>
         <columns>GeneralPrice__c</columns>
-        <columns>Field1__c</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>
+    <listViews>
+        <fullName>CurtainsInProcess</fullName>
+        <columns>Field1__c</columns>
+        <columns>NAME</columns>
+        <columns>Status__c</columns>
+        <columns>Contact__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Замовлено тканину,В цеху</value>
+        </filters>
+        <label>Штори в роботі</label>
+    </listViews>
+    <listViews>
+        <fullName>ReadyCurtains</fullName>
+        <columns>Field1__c</columns>
+        <columns>NAME</columns>
+        <columns>Contact__c</columns>
+        <columns>Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Очікує видачі</value>
+        </filters>
+        <label>Штори на видачу</label>
+    </listViews>
     <nameField>
-        <displayFormat>{0000}</displayFormat>
         <label>Штора Name</label>
         <trackHistory>false</trackHistory>
-        <type>AutoNumber</type>
+        <type>Text</type>
     </nameField>
     <pluralLabel>Штори</pluralLabel>
     <searchLayouts/>

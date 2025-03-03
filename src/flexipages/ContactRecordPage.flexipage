@@ -22,6 +22,17 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>actionNames</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>Contact__c.MassStatusUpdate</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Contact__c.Total_of_Order</value>
+                        </valueListItems>
+                    </valueList>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>numVisibleActions</name>
                     <value>3</value>
                 </componentInstanceProperties>
@@ -45,20 +56,20 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
-                    <value>none</value>
+                    <value>required</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.ClientName__c</fieldItem>
-                <identifier>RecordClientName_cField</identifier>
+                <fieldItem>Record.Name</fieldItem>
+                <identifier>RecordNameField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
-                    <value>required</value>
+                    <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Name</fieldItem>
-                <identifier>RecordNameField</identifier>
+                <fieldItem>Record.ClientName__c</fieldItem>
+                <identifier>RecordClientName_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -91,10 +102,36 @@
                 <identifier>RecordGeneralPrice_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.SelectedCurtains__c</fieldItem>
+                <identifier>RecordSelectedCurtains__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.FinalPrice__c</fieldItem>
+                <identifier>RecordFinalPrice__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-7e713bb2-e27e-4589-b32c-97068184022e</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentName>flexipage:blankSpace</componentName>
+                <identifier>flexipage_blankSpace</identifier>
+            </componentInstance>
+        </itemInstances>
         <itemInstances>
             <fieldInstance>
                 <fieldInstanceProperties>
@@ -141,6 +178,13 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.SelectedCurtains__c</fieldItem>
                 <identifier>RecordSelectedCurtains_cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Expenses__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>true</rightValue>
+                    </criteria>
+                </visibilityRule>
             </fieldInstance>
         </itemInstances>
         <name>Facet-0af2bb70-fbe0-4700-a315-f3bb9b251700</name>
@@ -175,16 +219,6 @@
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.SelectedCurtains__c</fieldItem>
-                <identifier>RecordSelectedCurtains__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
         <itemInstances>
             <fieldInstance>
                 <fieldInstanceProperties>
@@ -271,13 +305,6 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection3</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.Expenses__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>true</rightValue>
-                    </criteria>
-                </visibilityRule>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -344,10 +371,10 @@
                             <value>Room__c</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Type__c</value>
+                            <value>Meterage__c</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Meterage__c</value>
+                            <value>Status__c</value>
                         </valueListItems>
                         <valueListItems>
                             <value>GeneralPrice__c</value>

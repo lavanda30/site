@@ -5,9 +5,6 @@
 public with sharing class CurtainCalculator {
     
     public static Curtain__c calculateData(Curtain__c curtainObject) {
-        if (String.isBlank(curtainObject.PriceType__c)) {
-            curtainObject.PriceType__c = 'грн.';
-        }
         
         Contact__c parentContact = new Contact__c();
         if (!String.isBlank(curtainObject.Contact__c)) {
@@ -28,22 +25,30 @@ public with sharing class CurtainCalculator {
             }
             
             if (!String.isBlank(curtainObject.CustomWigth__c)) {
-                curtainObject.Meterage__c = String.valueOf(roundMeterage(
-                        (Decimal.valueOf(curtainObject.CustomWigth__c) * ZBIRKA_VALUES.get(curtainObject.Zbirka__c)) / 100 +
-                        (Decimal.valueOf(quantity) * 0.1)
-                ));
+                Decimal rawMeterage =
+                        ((Decimal.valueOf(curtainObject.CustomWigth__c) * ZBIRKA_VALUES.get(curtainObject.Zbirka__c)) / 100) +
+                        (Decimal.valueOf(quantity) * 0.1);
+                
+                // Округление Meterage__c в большую сторону до одного знака после запятой
+                curtainObject.Meterage__c = String.valueOf(rawMeterage.setScale(1, System.RoundingMode.UP));
             } else {
-                curtainObject.Meterage__c = String.valueOf(roundMeterage(
-                        (Decimal.valueOf(curtainObject.CarnizWigth__c) * ZBIRKA_VALUES.get(curtainObject.Zbirka__c)) / 100 +
-                        (Decimal.valueOf(quantity) * 0.1)
-                ));
+                Decimal rawMeterage =
+                        ((Decimal.valueOf(curtainObject.CarnizWigth__c) * ZBIRKA_VALUES.get(curtainObject.Zbirka__c)) / 100) +
+                        (Decimal.valueOf(quantity) * 0.1);
+                
+                // Округление Meterage__c в большую сторону до одного знака после запятой
+                curtainObject.Meterage__c = String.valueOf(rawMeterage.setScale(1, System.RoundingMode.UP));
             }
-            System.debug('curtainObject.Meterage__c ' + curtainObject.Meterage__c);
             
-//            curtainObject.MeterageNaPoshiv__c =
+            System.debug('curtainObject.Meterage__c ' + curtainObject.Meterage__c);
+
+// Округление MeterageNaPoshiv__c по методу roundMeterage
+            curtainObject.MeterageNaPoshiv__c = String.valueOf(roundMeterage(Decimal.valueOf(curtainObject.Meterage__c)));
+            System.debug('curtainObject.MeterageNaPoshiv__c ' + curtainObject.MeterageNaPoshiv__c);
+            
             
             curtainObject.CurtainPriceSum__c = String.valueOf(Decimal.valueOf(curtainObject.Meterage__c) *
-                    Decimal.valueOf(curtainObject.Price__c)) + ' ' + curtainObject.PriceType__c;
+                    Decimal.valueOf(curtainObject.Price__c));
             System.debug('curtainObject.CurtainPriceSum__c ' + curtainObject.CurtainPriceSum__c);
             
             curtainObject.TasmaMetrage__c = String.valueOf(roundMeterage(
@@ -52,20 +57,20 @@ public with sharing class CurtainCalculator {
             System.debug('curtainObject.TasmaMetrage__c ' + curtainObject.TasmaMetrage__c);
             
             curtainObject.TasmaPriceSum__c = String.valueOf(Decimal.valueOf(curtainObject.TasmaMetrage__c) *
-                    Decimal.valueOf(curtainObject.TasmaPrice__c)) + ' ' + curtainObject.PriceType__c;
+                    Decimal.valueOf(curtainObject.TasmaPrice__c));
             System.debug('curtainObject.TasmaPriceSum__c ' + curtainObject.TasmaPriceSum__c);
             
             curtainObject.PoshivPriceSum__c = String.valueOf(Decimal.valueOf(curtainObject.Meterage__c) *
-                    Decimal.valueOf(curtainObject.PoshivPrice__c)) + ' ' + curtainObject.PriceType__c;
+                    Decimal.valueOf(curtainObject.PoshivPrice__c));
             System.debug('curtainObject.PoshivPriceSum__c ' + curtainObject.PoshivPriceSum__c);
             
             if (curtainObject.Navis__c) {
                 if (curtainObject.Viizd__c) {
                     curtainObject.NavisPriceSum__c = String.valueOf(Decimal.valueOf(curtainObject.Meterage__c) *
-                            Decimal.valueOf(curtainObject.NavisPrice__c) + 500) + ' ' + curtainObject.PriceType__c;
+                            Decimal.valueOf(curtainObject.NavisPrice__c) + 500);
                 } else {
                     curtainObject.NavisPriceSum__c = String.valueOf(Decimal.valueOf(curtainObject.Meterage__c) *
-                            Decimal.valueOf(curtainObject.NavisPrice__c)) + ' ' + curtainObject.PriceType__c;
+                            Decimal.valueOf(curtainObject.NavisPrice__c));
                 }
             }
             System.debug('curtainObject.NavisPriceSum__c ' + curtainObject.NavisPriceSum__c);
@@ -81,6 +86,12 @@ public with sharing class CurtainCalculator {
             }
             
             Decimal finalPrice = 0;
+            System.debug('CurtainPriceSum__c: ' + curtainObject.CurtainPriceSum__c);
+            System.debug('TasmaPriceSum__c: ' + curtainObject.TasmaPriceSum__c);
+            System.debug('PoshivPriceSum__c: ' + curtainObject.PoshivPriceSum__c);
+            System.debug('NavisPriceSum__c: ' + curtainObject.NavisPriceSum__c);
+            System.debug('Delivery__c: ' + curtainObject.Delivery__c);
+            System.debug('DeliveryNumber__c: ' + curtainObject.DeliveryNumber__c);
             
             finalPrice += !String.isBlank(curtainObject.CurtainPriceSum__c) ? extractDecimal(curtainObject.CurtainPriceSum__c) : 0;
             finalPrice += !String.isBlank(curtainObject.TasmaPriceSum__c) ? extractDecimal(curtainObject.TasmaPriceSum__c) : 0;
@@ -135,7 +146,7 @@ public with sharing class CurtainCalculator {
             'sofora_2' => 2,
             'pinella' => 1,
             'hvulya' => 2,
-            'luversna' => 1
+            'luversna' => 2
     };
     
     public static Decimal extractDecimal(String value) {
@@ -143,6 +154,7 @@ public with sharing class CurtainCalculator {
             return 0;
         }
         String numericPart = value.replaceAll('[^0-9.]', ''); // Оставляем только цифры и точку
+        System.debug('numericPart ' +numericPart);
         return Decimal.valueOf(numericPart);
     }
     

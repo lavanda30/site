@@ -42,10 +42,24 @@
         <aggregateTypes>Sum</aggregateTypes>
         <field>Contact__c.GeneralPrice__c</field>
     </columns>
+    <filter>
+        <criteriaItems>
+            <column>CUST_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>test</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
     <format>Summary</format>
     <groupingsDown>
+        <field>CUST_CREATED_DATE</field>
+        <sortOrder>Desc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
         <dateGranularity>Day</dateGranularity>
-        <field>Contact__c.ClientName__c</field>
+        <field>CUST_NAME</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
     <name>Замовлені штори</name>
@@ -54,7 +68,7 @@
         <value>1</value>
     </params>
     <reportType>CustomEntityCustomEntity$Contact__c$Curtain__c</reportType>
-    <scope>user</scope>
+    <scope>organization</scope>
     <showDetails>true</showDetails>
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>false</showSubTotals>

@@ -23,10 +23,12 @@ public class CurtainTriggerHandler {
     }
     
     public static void beforeInsert(List<Curtain__c> newList) {
+        CurtainCalculator.calculateData(newList[0]);
+        CurtainTriggerHelper.populateFields(newList);
     }
     
     public static void beforeUpdate(List<Curtain__c> newList, Map<Id, Curtain__c> oldMap) {
-        System.debug('beforeUpdate');
+        System.debug('beforeUpdate1');
         CurtainTriggerHelper.recalculateFields(newList[0]);
     }
     
@@ -37,7 +39,7 @@ public class CurtainTriggerHandler {
     }
     
     public static void afterUpdate(List<Curtain__c> newList, Map<Id, Curtain__c> oldMap) {
-        System.debug('afterUpdate');
+        System.debug('afterUpdate1');
     }
     
     public static void afterDelete(List<Curtain__c> oldList) {

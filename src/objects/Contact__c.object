@@ -173,7 +173,7 @@
     <fields>
         <fullName>ClientName__c</fullName>
         <externalId>false</externalId>
-        <label>Ім&apos;я</label>
+        <label>Телефон</label>
         <length>255</length>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -199,6 +199,17 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>FinalPrice__c</fullName>
+        <inlineHelpText>Ціна, яку затверджено з покупцем в ході розгляду і затвердження замовлення.</inlineHelpText>
+        <label>Фінальна ціна</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
     </fields>
     <fields>
         <fullName>GeneralDiscount__c</fullName>
@@ -273,6 +284,11 @@
         <fullName>GeneralPrice__c</fullName>
         <label>Сумма всіх штор</label>
         <summarizedField>Curtain__c.GeneralPrice__c</summarizedField>
+        <summaryFilterItems>
+            <field>Curtain__c.GeneralPrice__c</field>
+            <operation>notEqual</operation>
+            <value></value>
+        </summaryFilterItems>
         <summaryForeignKey>Curtain__c.Contact__c</summaryForeignKey>
         <summaryOperation>sum</summaryOperation>
         <trackHistory>false</trackHistory>
@@ -306,7 +322,7 @@
         <label>All</label>
     </listViews>
     <nameField>
-        <label>Телефон</label>
+        <label>Ім&apos;я</label>
         <trackHistory>false</trackHistory>
         <type>Text</type>
     </nameField>

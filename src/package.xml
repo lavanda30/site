@@ -21,6 +21,10 @@
         <name>FlexiPage</name>
     </types>
     <types>
+        <members>Mass_Status_Update</members>
+        <name>Flow</name>
+    </types>
+    <types>
         <members>Contact__c-Контакт Layout</members>
         <members>Curtain__c-Штора Layout</members>
         <name>Layout</name>
