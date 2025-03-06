@@ -28,6 +28,21 @@ public with sharing class CurtainImageController {
             update curtain;
         }
     
+    }
     
+    @AuraEnabled(Cacheable=true)
+    public static Curtain__c getCurtainRecord(String recordId) {
+        System.debug('recordId ' +recordId);
+        Curtain__c curtain = [
+                SELECT Height__c, HeightPoint__c, Meterage__c, CustomWigth__c, Zbirka__c, Tasma__c, ObrobkaNiz__c,
+                        TasmaPlace__c, Name__c, Room__c, CreatedDate, toLabel(Type__c), Quantity__c, ContactName__c,
+                        Description__c
+                FROM Curtain__c
+                WHERE Id = :recordId
+                LIMIT 1
+        ];
+        System.debug(curtain);
+        
+        return curtain;
     }
 }

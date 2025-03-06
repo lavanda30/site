@@ -6,5 +6,6 @@
     <masterLabel>Curtain Image Generator</masterLabel>
     <targets>
         <target>lightning__RecordPage</target>
+        <target>lightning__RecordAction</target>
     </targets>
 </LightningComponentBundle>

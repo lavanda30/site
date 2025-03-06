@@ -137,16 +137,16 @@ public with sharing class CurtainCalculator {
     }
     
     public static final Map<String, Decimal> ZBIRKA_VALUES = new Map<String, Decimal>{
-            'enigma_15' => 1.5,
-            'enigma_18' => 1.8,
-            'enigma_2' => 2,
-            'enigma_25' => 2.5,
-            'enigma_3' => 3,
-            'sofora_18' => 1.8,
-            'sofora_2' => 2,
-            'pinella' => 1,
-            'hvulya' => 2,
-            'luversna' => 2
+            'Enigma 1:1,5' => 1.5,
+            'Enigma 1:1,8' => 1.8,
+            'Enigma 1:2' => 2,
+            'Enigma 1:2,5' => 2.5,
+            'Enigma 1:3' => 3,
+            'Sofora 1:1,8' => 1.8,
+            'Sofora 1:2' => 2,
+            'Pinella' => 1,
+            'Хвиля 1:2' => 2,
+            'Люверсна' => 2
     };
     
     public static Decimal extractDecimal(String value) {

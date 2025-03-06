@@ -65,10 +65,10 @@ export default class CurtainForm extends LightningElement {
 
     highPoint = [
         { value: 'none', label: 'Виберіть значення' },
-        { value: 'do_carnizu', label: 'до карнізу' },
-        { value: 'do_gachka', label: 'до гачка' },
-        { value: 'do_petli', label: 'до петлі' },
-        { value: 'do_virobu', label: 'готового виробу' },
+        { value: 'до карнізу', label: 'до карнізу' },
+        { value: 'до гачка', label: 'до гачка' },
+        { value: 'до петлі', label: 'до петлі' },
+        { value: 'від краю до краю', label: 'від краю до краю' },
     ];
 
     type = [
