@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
+        <members>ContactDeepClone</members>
+        <members>ContactTriggerHandler</members>
+        <members>ContactTriggerHelper</members>
         <members>CurtainCalculator</members>
         <members>CurtainImageController</members>
+        <members>CurtainTriggerHandler</members>
+        <members>CurtainTriggerHelper</members>
+        <members>DisplayCurtainMeteragesController</members>
+        <members>TriggerHandler</members>
+        <members>curtainFormController</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -12,6 +20,13 @@
     <types>
         <members>LAVANDA</members>
         <name>CustomApplication</name>
+    </types>
+    <types>
+        <members>Account</members>
+        <members>Case</members>
+        <members>Contact__c</members>
+        <members>Curtain__c</members>
+        <name>CustomObject</name>
     </types>
     <types>
         <members>Contact__c</members>
@@ -35,9 +50,12 @@
         <name>Layout</name>
     </types>
     <types>
+        <members>clientCheck</members>
+        <members>curtainForm</members>
         <members>curtainImageGenerator</members>
         <members>displayCurtainMeterages</members>
         <members>displayResult</members>
+        <members>navigateToRecord</members>
         <name>LightningComponentBundle</name>
     </types>
     <types>

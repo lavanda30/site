@@ -95,6 +95,38 @@
         </connector>
     </assignments>
     <dynamicChoiceSets>
+        <name>choiceSet_Discount</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>CurtainDiscount__c</picklistField>
+        <picklistObject>Curtain__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>choiceSet_heightPoint</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>HeightPoint__c</picklistField>
+        <picklistObject>Curtain__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>choiceSet_obrobkaNiz</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>ObrobkaNiz__c</picklistField>
+        <picklistObject>Curtain__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>choiceSet_poshivPrice</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>PoshivPrice__c</picklistField>
+        <picklistObject>Curtain__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
         <name>choiceSet_Statuses</name>
         <dataType>Picklist</dataType>
         <displayField xsi:nil="true"/>
@@ -102,7 +134,85 @@
         <picklistField>Status__c</picklistField>
         <picklistObject>Curtain__c</picklistObject>
     </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>choiceSet_tasma</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Tasma__c</picklistField>
+        <picklistObject>Curtain__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>choiceSet_zbirka</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Zbirka__c</picklistField>
+        <picklistObject>Curtain__c</picklistObject>
+    </dynamicChoiceSets>
     <environments>Default</environments>
+    <formulas>
+        <name>formula_comment</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!Comment}), {!Selected_Curtains_Loop.Description__c}, {!Comment})</expression>
+    </formulas>
+    <formulas>
+        <name>formula_discount</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    ISBLANK({!Discount}),
+    TEXT({!Selected_Curtains_Loop.CurtainDiscount__c}),
+    SUBSTITUTE({!Discount}, &quot; %&quot;, &quot;&quot;)
+)</expression>
+    </formulas>
+    <formulas>
+        <name>formula_height</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!Height}), {!Selected_Curtains_Loop.Height__c}, {!Height})</expression>
+    </formulas>
+    <formulas>
+        <name>formula_heightPoint</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!heightPoint}), TEXT({!Selected_Curtains_Loop.HeightPoint__c}), {!heightPoint})</expression>
+    </formulas>
+    <formulas>
+        <name>formula_name</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!Name}), {!Selected_Curtains_Loop.Name__c}, {!Name})</expression>
+    </formulas>
+    <formulas>
+        <name>formula_obrobkaNiz</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!obrobkaNiz}), TEXT({!Selected_Curtains_Loop.ObrobkaNiz__c}), {!obrobkaNiz})</expression>
+    </formulas>
+    <formulas>
+        <name>formula_price</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!Price}), {!Selected_Curtains_Loop.Price__c}, {!Price})</expression>
+    </formulas>
+    <formulas>
+        <name>formula_pricePoshiv</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    ISBLANK({!PricePoshiv}),
+    TEXT({!Selected_Curtains_Loop.PoshivPrice__c}),
+    SUBSTITUTE({!PricePoshiv}, &quot; грн.&quot;, &quot;&quot;))</expression>
+    </formulas>
+    <formulas>
+        <name>formula_status</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!selectedStatus}), TEXT({!Selected_Curtains_Loop.Status__c}), {!selectedStatus})</expression>
+    </formulas>
+    <formulas>
+        <name>formula_tasma</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!Tasma}), TEXT({!Selected_Curtains_Loop.Tasma__c}), {!Tasma})</expression>
+    </formulas>
+    <formulas>
+        <name>formula_zbirka</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!Zbirka}), TEXT({!Selected_Curtains_Loop.Zbirka__c}), {!Zbirka})</expression>
+    </formulas>
     <interviewLabel>Mass Status Update {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Mass Status Update</label>
     <loops>
@@ -184,13 +294,54 @@
                 <name>Screen_Section1_Column1</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>selectedStatus</name>
-                    <choiceReferences>choiceSet_Statuses</choiceReferences>
+                    <name>Name</name>
                     <dataType>String</dataType>
-                    <fieldText>Обрати статус штор</fieldText>
+                    <fieldText>Назва</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <fields>
+                    <name>Height</name>
+                    <dataType>String</dataType>
+                    <fieldText>Висота (см)</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <fields>
+                    <name>Price</name>
+                    <dataType>String</dataType>
+                    <fieldText>Ціна тканини</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <fields>
+                    <name>PricePoshiv</name>
+                    <choiceReferences>choiceSet_poshivPrice</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Ціна пошиву</fieldText>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>true</isRequired>
+                    <isRequired>false</isRequired>
+                </fields>
+                <fields>
+                    <name>Comment</name>
+                    <dataType>String</dataType>
+                    <fieldText>Коментар</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <fields>
+                    <name>obrobkaNiz</name>
+                    <choiceReferences>choiceSet_obrobkaNiz</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Обробка низу</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -203,6 +354,51 @@
             <fields>
                 <name>Screen_Section1_Column2</name>
                 <fieldType>Region</fieldType>
+                <fields>
+                    <name>selectedStatus</name>
+                    <choiceReferences>choiceSet_Statuses</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Статус штори</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <fields>
+                    <name>Tasma</name>
+                    <choiceReferences>choiceSet_tasma</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Тасьма</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <fields>
+                    <name>Zbirka</name>
+                    <choiceReferences>choiceSet_zbirka</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Збірка</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <fields>
+                    <name>heightPoint</name>
+                    <choiceReferences>choiceSet_heightPoint</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Точка висоти</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <fields>
+                    <name>Discount</name>
+                    <choiceReferences>choiceSet_Discount</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Спеціальні умови</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -268,7 +464,7 @@
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
-        <nextOrFinishButtonLabel>Оновити статус</nextOrFinishButtonLabel>
+        <nextOrFinishButtonLabel>Оновити штори</nextOrFinishButtonLabel>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
     </screens>

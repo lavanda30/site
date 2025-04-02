@@ -3,9 +3,9 @@
  */
 
 public class CurtainTriggerHelper{
-    public static void recalculateFields(Curtain__c curtainObject) {
+    public static void recalculateFields(List<Curtain__c> curtainObjects) {
         System.debug('recalculateFields');
-        CurtainCalculator.calculateData(curtainObject);
+        CurtainCalculator.calculateData(curtainObjects);
     }
     
     public static void populateFields(List<Curtain__c> curtains) {
@@ -19,6 +19,8 @@ public class CurtainTriggerHelper{
         for (Curtain__c curt : curtains) {
             if (picklistMap.containsKey(curt.Type__c)) {
                 curt.Name = picklistMap.get(curt.Type__c);
+            } else {
+                curt.Name = 'ШТОРА';
             }
         }
     }

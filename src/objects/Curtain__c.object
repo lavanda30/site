@@ -252,6 +252,102 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>CarnizWigth2__c</fullName>
+        <externalId>false</externalId>
+        <label>Ширина Карнізу (см) 2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Carniz2__c</fullName>
+        <label>Карніз</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>gardinia</fullName>
+                    <default>false</default>
+                    <label>Gardinia</label>
+                </value>
+                <value>
+                    <fullName>alutat</fullName>
+                    <default>false</default>
+                    <label>Alutat</label>
+                </value>
+                <value>
+                    <fullName>ks</fullName>
+                    <default>false</default>
+                    <label>KS</label>
+                </value>
+                <value>
+                    <fullName>lux</fullName>
+                    <default>false</default>
+                    <label>Lux S-M</label>
+                </value>
+                <value>
+                    <fullName>ds</fullName>
+                    <default>false</default>
+                    <label>DS</label>
+                </value>
+                <value>
+                    <fullName>circle</fullName>
+                    <default>false</default>
+                    <label>Круглий</label>
+                </value>
+                <value>
+                    <fullName>metal</fullName>
+                    <default>false</default>
+                    <label>Металічний П-обр крючок</label>
+                </value>
+                <value>
+                    <fullName>other</fullName>
+                    <default>false</default>
+                    <label>Інший</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Check2__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Вибрати</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ContactDiscount2__c</fullName>
+        <externalId>false</externalId>
+        <label>Знижка з контакта</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ContactName__c</fullName>
+        <externalId>false</externalId>
+        <formula>Contact__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Ім&apos;я замовника</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Contact__c</fullName>
         <label>Контакт</label>
         <referenceTo>Contact__c</referenceTo>
@@ -437,6 +533,189 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>CurtainDiscount2__c</fullName>
+        <label>Спеціальні умови</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                    <label>2 %</label>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                    <label>3 %</label>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                    <label>4 %</label>
+                </value>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                    <label>5 %</label>
+                </value>
+                <value>
+                    <fullName>6</fullName>
+                    <default>false</default>
+                    <label>6 %</label>
+                </value>
+                <value>
+                    <fullName>7</fullName>
+                    <default>false</default>
+                    <label>7 %</label>
+                </value>
+                <value>
+                    <fullName>8</fullName>
+                    <default>false</default>
+                    <label>8 %</label>
+                </value>
+                <value>
+                    <fullName>10</fullName>
+                    <default>false</default>
+                    <label>10 %</label>
+                </value>
+                <value>
+                    <fullName>13</fullName>
+                    <default>false</default>
+                    <label>13 %</label>
+                </value>
+                <value>
+                    <fullName>14</fullName>
+                    <default>false</default>
+                    <label>14 %</label>
+                </value>
+                <value>
+                    <fullName>15</fullName>
+                    <default>false</default>
+                    <label>15 %</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CurtainPaid2__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Тканину оплачено</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CurtainPriceSum2__c</fullName>
+        <externalId>false</externalId>
+        <label>Ціна за тканину</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CustomWigth2__c</fullName>
+        <externalId>false</externalId>
+        <label>Ширина тканини (см)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DeliveryNumber2__c</fullName>
+        <label>Кількість доставок</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                    <label>1</label>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                    <label>2</label>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                    <label>3</label>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                    <label>4</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Delivery2__c</fullName>
+        <label>Доставка</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>120</fullName>
+                    <default>false</default>
+                    <label>120 грн.</label>
+                </value>
+                <value>
+                    <fullName>150</fullName>
+                    <default>false</default>
+                    <label>150 грн.</label>
+                </value>
+                <value>
+                    <fullName>180</fullName>
+                    <default>false</default>
+                    <label>180 грн.</label>
+                </value>
+                <value>
+                    <fullName>200</fullName>
+                    <default>false</default>
+                    <label>200 грн.</label>
+                </value>
+                <value>
+                    <fullName>220</fullName>
+                    <default>false</default>
+                    <label>220 грн.</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Коментар</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Diameter__c</fullName>
         <label>Діаметр Карнізу</label>
         <required>false</required>
@@ -464,18 +743,6 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields>
-    <fields>
-        <fullName>Field1__c</fullName>
-        <externalId>false</externalId>
-        <formula>Contact__r.ClientName__c</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>Ім&apos;я замовника</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
     </fields>
     <fields>
         <fullName>FinalPrice__c</fullName>
@@ -510,24 +777,39 @@
             <valueSetDefinition>
                 <sorted>false</sorted>
                 <value>
-                    <fullName>do_carnizu</fullName>
+                    <fullName>від краю до краю</fullName>
+                    <default>false</default>
+                    <label>від краю до краю</label>
+                </value>
+                <value>
+                    <fullName>до карнізу</fullName>
                     <default>false</default>
                     <label>до карнізу</label>
                 </value>
                 <value>
-                    <fullName>do_gachka</fullName>
+                    <fullName>до гачка</fullName>
                     <default>false</default>
                     <label>до гачка</label>
                 </value>
                 <value>
-                    <fullName>do_petli</fullName>
+                    <fullName>до верхньої петлі</fullName>
                     <default>false</default>
-                    <label>до петлі</label>
+                    <label>до верхньої петлі</label>
                 </value>
                 <value>
-                    <fullName>do_virobu</fullName>
+                    <fullName>до другої петлі</fullName>
                     <default>false</default>
-                    <label>готового виробу</label>
+                    <label>до другої петлі</label>
+                </value>
+                <value>
+                    <fullName>до нижньої петлі</fullName>
+                    <default>false</default>
+                    <label>до нижньої петлі</label>
+                </value>
+                <value>
+                    <fullName>до тасьми</fullName>
+                    <default>false</default>
+                    <label>до тасьми</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -566,6 +848,159 @@
     </fields>
     <fields>
         <fullName>Meterage__c</fullName>
+        <externalId>false</externalId>
+        <label>Метраж тканини</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Description2__c</fullName>
+        <externalId>false</externalId>
+        <label>Коментар</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Diameter2__c</fullName>
+        <label>Діаметр Карнізу</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                    <label>2 см</label>
+                </value>
+                <value>
+                    <fullName>2_5</fullName>
+                    <default>false</default>
+                    <label>2,5 см</label>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                    <label>3 см</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FinalPrice2__c</fullName>
+        <externalId>false</externalId>
+        <label>Загальна сумма1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GeneralPrice2__c</fullName>
+        <label>Загальна сумма</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>HeightPoint2__c</fullName>
+        <label>Точка Висоти</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>від краю до краю</fullName>
+                    <default>false</default>
+                    <label>від краю до краю</label>
+                </value>
+                <value>
+                    <fullName>до карнізу</fullName>
+                    <default>false</default>
+                    <label>до карнізу</label>
+                </value>
+                <value>
+                    <fullName>до гачка</fullName>
+                    <default>false</default>
+                    <label>до гачка</label>
+                </value>
+                <value>
+                    <fullName>до верхньої петлі</fullName>
+                    <default>false</default>
+                    <label>до верхньої петлі</label>
+                </value>
+                <value>
+                    <fullName>до другої петлі</fullName>
+                    <default>false</default>
+                    <label>до другої петлі</label>
+                </value>
+                <value>
+                    <fullName>до нижньої петлі</fullName>
+                    <default>false</default>
+                    <label>до нижньої петлі</label>
+                </value>
+                <value>
+                    <fullName>до тасьми</fullName>
+                    <default>false</default>
+                    <label>до тасьми</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Height2__c</fullName>
+        <externalId>false</externalId>
+        <label>Висота (см)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ManualPrice2__c</fullName>
+        <label>Відома ціна</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>MeterageNaPoshiv2__c</fullName>
+        <externalId>false</externalId>
+        <label>Метраж на пошив</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Meterage2__c</fullName>
         <externalId>false</externalId>
         <label>Метраж тканини</label>
         <length>255</length>
@@ -667,6 +1102,193 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>ObrobkaNiz__c</fullName>
+        <label>Обробка низу</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Обтяжувач</fullName>
+                    <default>false</default>
+                    <label>Обтяжувач</label>
+                </value>
+                <value>
+                    <fullName>3 x 3 W</fullName>
+                    <default>false</default>
+                    <label>3 x 3 W</label>
+                </value>
+                <value>
+                    <fullName>5 х 5 W</fullName>
+                    <default>false</default>
+                    <label>5 х 5 W</label>
+                </value>
+                <value>
+                    <fullName>10 x 10 W</fullName>
+                    <default>false</default>
+                    <label>10 x 10 W</label>
+                </value>
+                <value>
+                    <fullName>12 x 12 W</fullName>
+                    <default>false</default>
+                    <label>12 x 12 W</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Ordered__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Замовлено</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Name2__c</fullName>
+        <externalId>false</externalId>
+        <label>Назва</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NavisPriceSum2__c</fullName>
+        <externalId>false</externalId>
+        <label>Ціна за навіс</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NavisPrice2__c</fullName>
+        <label>Ціна навісу</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>120</fullName>
+                    <default>false</default>
+                    <label>120 грн м.п.</label>
+                </value>
+                <value>
+                    <fullName>140</fullName>
+                    <default>false</default>
+                    <label>140 грн. м.п.</label>
+                </value>
+                <value>
+                    <fullName>160</fullName>
+                    <default>false</default>
+                    <label>160 грн. м.п.</label>
+                </value>
+                <value>
+                    <fullName>180</fullName>
+                    <default>false</default>
+                    <label>180 грн. м.п.</label>
+                </value>
+                <value>
+                    <fullName>200</fullName>
+                    <default>false</default>
+                    <label>200 грн. м.п.</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Navis2__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Навіс</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Nisha2__c</fullName>
+        <label>Ніша</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>yes</fullName>
+                    <default>false</default>
+                    <label>Так</label>
+                </value>
+                <value>
+                    <fullName>no</fullName>
+                    <default>false</default>
+                    <label>Ні</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ObrobkaNiz2__c</fullName>
+        <label>Обробка низу</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Обтяжувач</fullName>
+                    <default>false</default>
+                    <label>Обтяжувач</label>
+                </value>
+                <value>
+                    <fullName>3 x 3 W</fullName>
+                    <default>false</default>
+                    <label>3 x 3 W</label>
+                </value>
+                <value>
+                    <fullName>5 х 5 W</fullName>
+                    <default>false</default>
+                    <label>5 х 5 W</label>
+                </value>
+                <value>
+                    <fullName>10 x 10 W</fullName>
+                    <default>false</default>
+                    <label>10 x 10 W</label>
+                </value>
+                <value>
+                    <fullName>12 x 12 W</fullName>
+                    <default>false</default>
+                    <label>12 x 12 W</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Ordered2__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Замовлено</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>PicturesAttached__c</fullName>
@@ -855,6 +1477,18 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>TasmaPlace__c</fullName>
+        <defaultValue>&quot;в край&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Розташування тасьми</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>TasmaPriceSum__c</fullName>
         <externalId>false</externalId>
         <label>Ціна за тасьму</label>
@@ -906,17 +1540,17 @@
             <valueSetDefinition>
                 <sorted>false</sorted>
                 <value>
-                    <fullName>fixProzora</fullName>
+                    <fullName>Прозора фіксована</fullName>
                     <default>false</default>
                     <label>Прозора фіксована</label>
                 </value>
                 <value>
-                    <fullName>fixHB</fullName>
+                    <fullName>ХБ фіксована</fullName>
                     <default>false</default>
                     <label>ХБ фіксована</label>
                 </value>
                 <value>
-                    <fullName>notfix</fullName>
+                    <fullName>Не фіксована</fullName>
                     <default>false</default>
                     <label>Не фіксована</label>
                 </value>
@@ -935,12 +1569,12 @@
             <valueSetDefinition>
                 <sorted>false</sorted>
                 <value>
-                    <fullName>shtora</fullName>
+                    <fullName>Штора</fullName>
                     <default>false</default>
                     <label>Штора</label>
                 </value>
                 <value>
-                    <fullName>tul</fullName>
+                    <fullName>Тюль</fullName>
                     <default>false</default>
                     <label>Тюль</label>
                 </value>
@@ -967,52 +1601,414 @@
             <valueSetDefinition>
                 <sorted>false</sorted>
                 <value>
-                    <fullName>enigma_15</fullName>
+                    <fullName>Enigma 1:1,5</fullName>
                     <default>false</default>
                     <label>Enigma 1:1,5</label>
                 </value>
                 <value>
-                    <fullName>enigma_18</fullName>
+                    <fullName>Enigma 1:1,8</fullName>
                     <default>false</default>
                     <label>Enigma 1:1,8</label>
                 </value>
                 <value>
-                    <fullName>enigma_2</fullName>
+                    <fullName>Enigma 1:2</fullName>
                     <default>false</default>
                     <label>Enigma 1:2</label>
                 </value>
                 <value>
-                    <fullName>enigma_25</fullName>
+                    <fullName>Enigma 1:2,5</fullName>
                     <default>false</default>
                     <label>Enigma 1:2,5</label>
                 </value>
                 <value>
-                    <fullName>enigma_3</fullName>
+                    <fullName>Enigma 1:3</fullName>
                     <default>false</default>
                     <label>Enigma 1:3</label>
                 </value>
                 <value>
-                    <fullName>sofora_18</fullName>
+                    <fullName>Sofora 1:1,8</fullName>
                     <default>false</default>
                     <label>Sofora 1:1,8</label>
                 </value>
                 <value>
-                    <fullName>sofora_2</fullName>
+                    <fullName>Sofora 1:2</fullName>
                     <default>false</default>
                     <label>Sofora 1:2</label>
                 </value>
                 <value>
-                    <fullName>pinella</fullName>
+                    <fullName>Pinella</fullName>
                     <default>false</default>
                     <label>Pinella</label>
                 </value>
                 <value>
-                    <fullName>hvulya</fullName>
+                    <fullName>Хвиля 1:2</fullName>
                     <default>false</default>
                     <label>Хвиля 1:2</label>
                 </value>
                 <value>
-                    <fullName>luversna</fullName>
+                    <fullName>Люверсна</fullName>
+                    <default>false</default>
+                    <label>Люверсна</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PoshivPriceSum2__c</fullName>
+        <externalId>false</externalId>
+        <label>Ціна за пошив</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+
+    <fields>
+        <fullName>PoshivPrice2__c</fullName>
+        <label>Ціна пошиву</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>150</fullName>
+                    <default>false</default>
+                    <label>150 грн.</label>
+                </value>
+                <value>
+                    <fullName>180</fullName>
+                    <default>false</default>
+                    <label>180 грн.</label>
+                </value>
+                <value>
+                    <fullName>200</fullName>
+                    <default>false</default>
+                    <label>200 грн.</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+
+    <fields>
+        <fullName>PostpaidReceived2__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Післяоплата отримана</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+
+    <fields>
+        <fullName>PriceType2__c</fullName>
+        <label>Валюта</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>грн</fullName>
+                    <default>false</default>
+                    <label>грн.</label>
+                </value>
+                <value>
+                    <fullName>уо</fullName>
+                    <default>false</default>
+                    <label>опт, у.о.</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Price2__c</fullName>
+        <externalId>false</externalId>
+        <label>Ціна тканини</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Quantity2__c</fullName>
+        <label>Кількість</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                    <label>1 штука</label>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                    <label>2 штуки</label>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                    <label>3 штуки</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Room2__c</fullName>
+        <externalId>false</externalId>
+        <label>Кімната</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status2__c</fullName>
+        <label>Статус</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>На розгляді</fullName>
+                    <default>true</default>
+                    <label>На розгляді</label>
+                </value>
+                <value>
+                    <fullName>Обрано кліентом</fullName>
+                    <default>false</default>
+                    <label>Обрано кліентом</label>
+                </value>
+                <value>
+                    <fullName>Замовлено тканину</fullName>
+                    <default>false</default>
+                    <label>Замовлено тканину</label>
+                </value>
+                <value>
+                    <fullName>В цеху</fullName>
+                    <default>false</default>
+                    <label>В цеху</label>
+                </value>
+                <value>
+                    <fullName>Очікує видачі</fullName>
+                    <default>false</default>
+                    <label>Очікує видачі</label>
+                </value>
+                <value>
+                    <fullName>Виконано</fullName>
+                    <default>false</default>
+                    <label>Виконано</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>TasmaMetrage2__c</fullName>
+        <externalId>false</externalId>
+        <label>Метраж тасьми</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TasmaPlace2__c</fullName>
+        <defaultValue>&quot;в край&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Розташування тасьми</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TasmaPriceSum2__c</fullName>
+        <externalId>false</externalId>
+        <label>Ціна за тасьму</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TasmaPrice2__c</fullName>
+        <label>Ціна тасьми</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>85</fullName>
+                    <default>false</default>
+                    <label>85 грн.</label>
+                </value>
+                <value>
+                    <fullName>110</fullName>
+                    <default>false</default>
+                    <label>110 грн.</label>
+                </value>
+                <value>
+                    <fullName>140</fullName>
+                    <default>false</default>
+                    <label>140 грн.</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+
+    <fields>
+        <fullName>Tasma2__c</fullName>
+        <label>Тасьма</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Прозора фіксована</fullName>
+                    <default>false</default>
+                    <label>Прозора фіксована</label>
+                </value>
+                <value>
+                    <fullName>ХБ фіксована</fullName>
+                    <default>false</default>
+                    <label>ХБ фіксована</label>
+                </value>
+                <value>
+                    <fullName>Не фіксована</fullName>
+                    <default>false</default>
+                    <label>Не фіксована</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+
+    <fields>
+        <fullName>Type2__c</fullName>
+        <label>Тип</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Штора</fullName>
+                    <default>false</default>
+                    <label>Штора</label>
+                </value>
+                <value>
+                    <fullName>Тюль</fullName>
+                    <default>false</default>
+                    <label>Тюль</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+
+    <fields>
+        <fullName>Viizd2__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Виїзд</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+
+    <fields>
+        <fullName>Zbirka2__c</fullName>
+        <label>Збірка</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Enigma 1:1,5</fullName>
+                    <default>false</default>
+                    <label>Enigma 1:1,5</label>
+                </value>
+                <value>
+                    <fullName>Enigma 1:1,8</fullName>
+                    <default>false</default>
+                    <label>Enigma 1:1,8</label>
+                </value>
+                <value>
+                    <fullName>Enigma 1:2</fullName>
+                    <default>false</default>
+                    <label>Enigma 1:2</label>
+                </value>
+                <value>
+                    <fullName>Enigma 1:2,5</fullName>
+                    <default>false</default>
+                    <label>Enigma 1:2,5</label>
+                </value>
+                <value>
+                    <fullName>Enigma 1:3</fullName>
+                    <default>false</default>
+                    <label>Enigma 1:3</label>
+                </value>
+                <value>
+                    <fullName>Sofora 1:1,8</fullName>
+                    <default>false</default>
+                    <label>Sofora 1:1,8</label>
+                </value>
+                <value>
+                    <fullName>Sofora 1:2</fullName>
+                    <default>false</default>
+                    <label>Sofora 1:2</label>
+                </value>
+                <value>
+                    <fullName>Pinella</fullName>
+                    <default>false</default>
+                    <label>Pinella</label>
+                </value>
+                <value>
+                    <fullName>Хвиля 1:2</fullName>
+                    <default>false</default>
+                    <label>Хвиля 1:2</label>
+                </value>
+                <value>
+                    <fullName>Люверсна</fullName>
                     <default>false</default>
                     <label>Люверсна</label>
                 </value>
@@ -1022,7 +2018,7 @@
     <label>Штора</label>
     <listViews>
         <fullName>All</fullName>
-        <columns>Field1__c</columns>
+        <columns>ContactName__c</columns>
         <columns>NAME</columns>
         <columns>Name__c</columns>
         <columns>Room__c</columns>
@@ -1034,7 +2030,7 @@
     </listViews>
     <listViews>
         <fullName>CurtainsInProcess</fullName>
-        <columns>Field1__c</columns>
+        <columns>ContactName__c</columns>
         <columns>NAME</columns>
         <columns>Status__c</columns>
         <columns>Contact__c</columns>
@@ -1048,7 +2044,7 @@
     </listViews>
     <listViews>
         <fullName>ReadyCurtains</fullName>
-        <columns>Field1__c</columns>
+        <columns>ContactName__c</columns>
         <columns>NAME</columns>
         <columns>Contact__c</columns>
         <columns>Status__c</columns>

@@ -37,9 +37,9 @@ public class ContactTriggerHandler {
             }
         }
         
-        if(!contactsUpdateFinalPrice.isEmpty()) {
-            ContactTriggerHelper.updateFields(contactsUpdateFinalPrice);
-        }
+//        if(!contactsUpdateFinalPrice.isEmpty()) {
+//            ContactTriggerHelper.updateFields(contactsUpdateFinalPrice);
+//        }
         
     }
     
