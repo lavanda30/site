@@ -23,6 +23,7 @@ export default class CurtainImageGenerator extends LightningElement {
     @api curtainNiz;
     @api quantity;
     @api contactName;
+    @api description;
     @api generateButton = false;
 
     @api curtainUrl = curtainCentr;
@@ -35,19 +36,22 @@ export default class CurtainImageGenerator extends LightningElement {
             this.curtainWidth = data.Quantity__c > 1
                 ? data.Quantity__c + ' шт. по ' + Math.round((data.Meterage__c / data.Quantity__c) * 100)
                 : '1 шт., ' + Math.round(data.Meterage__c * 100);
-            console.log('222222222222 ' +this.curtainWidth)
-            this.curtainHeight = data.Height__c;
-            this.curtainHeightPoint = data.HeightPoint__c;
-            this.zbirka = data.Zbirka__c;
-            this.tasma = data.Tasma__c;
-            this.tasmaPlace = data.TasmaPlace__c;
-            this.curtainName = data.Name__c;
-            this.room = data.Room__c;
-            this.type = data.Type__c;
-            this.quantity = data.Quantity__c;
+            console.log('data.Meterage__c: ' + data.Meterage__c);
+            if (data.Meterage__c != null) {
+                this.generateButton = true;
+            }
+            this.curtainHeight = data.Height__c ? data.Height__c : '- висота -';
+            this.curtainHeightPoint = data.HeightPoint__c ? data.HeightPoint__c : '- точка висоти -';
+            this.zbirka = data.Zbirka__c ? data.Zbirka__c : '- збірка -';
+            this.tasma = data.Tasma__c ? data.Tasma__c : '- тасьма -';
+            this.tasmaPlace = data.TasmaPlace__c ? data.TasmaPlace__c : '- місце тасьми -';
+            this.curtainName = data.Name__c ? data.Name__c : '- назва тканини- ';
+            this.room = data.Room__c ? data.Room__c : '- кімната- ';
+            this.type = data.Type__c ? data.Type__c : '- тип -';
+            this.quantity = data.Quantity__c ? data.Quantity__c : '- кількість -';
             this.date = new Date(data.CreatedDate).toLocaleDateString('ru-RU');
-            this.curtainNiz = data.ObrobkaNiz__c ? data.ObrobkaNiz__c : '';
-            this.contactName = data.ContactName__c;
+            this.curtainNiz = data.ObrobkaNiz__c ? data.ObrobkaNiz__c : '- обробка низу -';
+            this.contactName = data.ContactName__c ? data.ContactName__c : '- імя замовника -';
             this.description = data.Description__c ? data.Description__c : '';
 
             if (this.curtainHeightPoint === 'від краю до краю') {
@@ -60,23 +64,6 @@ export default class CurtainImageGenerator extends LightningElement {
             console.log(error)
         }
     }
-
-    // handlePress() {
-    //     // Проверка типа шторы для правильного изображения
-    //     if (this.curtainHeightPoint === 'від краю до краю') {
-    //         this.curtainUrl = curtain;
-    //     } else if (this.curtainHeightPoint === 'до тасьми') {
-    //         this.curtainUrl = curtainNiz;
-    //     }
-    //
-    //     // Переключаем кнопку и отрисовываем картину
-    //     this.generateButton = !this.generateButton;
-    //
-    //     // Если данные для отрисовки есть
-    //     if (this.curtainHeight && this.curtainWidth) {
-    //         this.drawCurtainWithDimensions();
-    //     }
-    // }
 
     renderedCallback() {
         // console.log(this.recordId;)

@@ -619,8 +619,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.HeightPoint2__c</fieldItem>
-                <identifier>RecordHeightPoint2_cField</identifier>
+                <fieldItem>Record.HeightPoint__c</fieldItem>
+                <identifier>RecordHeightPoint_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -629,8 +629,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.ObrobkaNiz2__c</fieldItem>
-                <identifier>RecordObrobkaNiz2_cField</identifier>
+                <fieldItem>Record.ObrobkaNiz__c</fieldItem>
+                <identifier>RecordObrobkaNiz_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-83315d20-c69a-4481-b5fc-5d809ea04edc</name>
@@ -643,8 +643,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.TasmaPlace2__c</fieldItem>
-                <identifier>RecordTasmaPlace2_cField</identifier>
+                <fieldItem>Record.TasmaPlace__c</fieldItem>
+                <identifier>RecordTasmaPlace_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -653,8 +653,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Description2__c</fieldItem>
-                <identifier>RecordDescription2_cField</identifier>
+                <fieldItem>Record.Description__c</fieldItem>
+                <identifier>RecordDescription_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-8fe1b3ef-b942-44fc-9c50-fbec8ed59130</name>

@@ -2,9 +2,104 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <apiVersion>63.0</apiVersion>
     <assignments>
+        <name>Curtain_Fields_Carniz_2_Assignment</name>
+        <label>Curtain Fields Carniz 2 Assignment</label>
+        <locationX>264</locationX>
+        <locationY>674</locationY>
+        <assignmentItems>
+            <assignToReference>Selected_Curtains_Loop.Name2__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>formula_name</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Selected_Curtains_Loop.Height2__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>formula_height</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Selected_Curtains_Loop.Tasma2__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>formula_tasma</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Selected_Curtains_Loop.Zbirka2__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>formula_zbirka</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Selected_Curtains_Loop.PoshivPrice2__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>formula_pricePoshiv</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Selected_Curtains_Loop.CurtainDiscount2__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>formula_discount</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Selected_Curtains_Loop.Description2__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>formula_comment</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Selected_Curtains_Loop.HeightPoint2__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>formula_heightPoint</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Selected_Curtains_Loop.ObrobkaNiz2__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>formula_obrobkaNiz</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Selected_Curtains_Loop.Price2__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>formula_price</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Curtain_Object_Assignment</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Curtain_Object_Assignment</name>
+        <label>Curtain Object Assignment</label>
+        <locationX>396</locationX>
+        <locationY>866</locationY>
+        <assignmentItems>
+            <assignToReference>collection_curtainToUpdate</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Selected_Curtains_Loop</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Selected_Curtains_Loop</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Curtain_Status_Assignment</name>
         <label>Curtain Status Assignment</label>
-        <locationX>264</locationX>
+        <locationX>396</locationX>
         <locationY>458</locationY>
         <assignmentItems>
             <assignToReference>Selected_Curtains_Loop.Status__c</assignToReference>
@@ -83,17 +178,32 @@
                 <elementReference>formula_price</elementReference>
             </value>
         </assignmentItems>
-        <assignmentItems>
-            <assignToReference>collection_curtainToUpdate</assignToReference>
-            <operator>Add</operator>
-            <value>
-                <elementReference>Selected_Curtains_Loop</elementReference>
-            </value>
-        </assignmentItems>
         <connector>
-            <targetReference>Selected_Curtains_Loop</targetReference>
+            <targetReference>Carniz_2_Presented</targetReference>
         </connector>
     </assignments>
+    <decisions>
+        <name>Carniz_2_Presented</name>
+        <label>Carniz 2 Presented</label>
+        <locationX>396</locationX>
+        <locationY>566</locationY>
+        <defaultConnector>
+            <targetReference>Curtain_Object_Assignment</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Presented</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Selected_Curtains_Loop.Carniz2__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>Curtain_Fields_Carniz_2_Assignment</targetReference>
+            </connector>
+            <label>Presented</label>
+        </rules>
+    </decisions>
     <dynamicChoiceSets>
         <name>choiceSet_Discount</name>
         <dataType>Picklist</dataType>
@@ -273,7 +383,7 @@
         <name>Update_Curtains</name>
         <label>Update Curtains</label>
         <locationX>176</locationX>
-        <locationY>650</locationY>
+        <locationY>1058</locationY>
         <inputReference>collection_curtainToUpdate</inputReference>
     </recordUpdates>
     <screens>

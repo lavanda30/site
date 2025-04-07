@@ -35,10 +35,14 @@ public class CurtainTriggerHandler {
         for(Curtain__c record : newList) {
             Curtain__c oldRecord = oldMap.get(record.Id);
             
-            if (record.Type__c != oldRecord.Type__c && record.Type__c != null) {
-                updatedRecords.add(record);
-                
-            }
+//            if (record.Type__c != oldRecord.Type__c && record.Type__c != null) {
+//                updatedRecords.add(record);
+//
+//            }
+            if (record != oldRecord) {
+            updatedRecords.add(record);
+        
+        }
         }
         
         if (!updatedRecords.isEmpty()) {

@@ -41,7 +41,7 @@ public with sharing class CurtainImageController {
                 WHERE Id = :recordId
                 LIMIT 1
         ];
-        System.debug(curtain);
+        System.debug(curtain.Description__c);
         
         return curtain;
     }

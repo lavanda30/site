@@ -44,7 +44,22 @@
     <custom>false</custom>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Contact__c.Address__c</field>
+        <field>Curtain__c.AdvancePaymentReceived__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Curtain__c.Carniz2__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Curtain__c.CarnizWigth2__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Curtain__c.CarnizWigth__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
