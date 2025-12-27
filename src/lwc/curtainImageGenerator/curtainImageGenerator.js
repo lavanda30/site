@@ -126,7 +126,7 @@ export default class CurtainImageGenerator extends LightningElement {
             ctx.fillText(textTasma, 290 - text3Tasma / 2, 50); // Центрируем по ширине
 
 // Текст назва заказа (горизонтальный, центр нижней стороны)
-            ctx.font = '21px Arial';
+            ctx.font = '19px Arial';
             const textOrder = this.date + ' ' + this.contactName;
 
             const text0Order = ctx.measureText(textOrder).width;
