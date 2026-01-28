@@ -130,7 +130,7 @@
         <actionName>View</actionName>
         <comment>Action override created by Lightning App Builder during activation.</comment>
         <content>ContactRecordPage</content>
-        <formFactor>Large</formFactor>
+        <formFactor>Small</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
     </actionOverrides>
@@ -138,7 +138,7 @@
         <actionName>View</actionName>
         <comment>Action override created by Lightning App Builder during activation.</comment>
         <content>ContactRecordPage</content>
-        <formFactor>Small</formFactor>
+        <formFactor>Large</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
     </actionOverrides>
@@ -175,6 +175,26 @@
         <externalId>false</externalId>
         <label>Телефон</label>
         <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Client_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(
+  GeneralPrice__c &lt; 10000,
+  &quot;🟢&quot;,
+  IF(
+    GeneralPrice__c  &lt;= 40000,
+    &quot;🟡&quot;,
+    &quot;🔴&quot;
+  )
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Статус Кліента</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -313,12 +333,18 @@
     <label>Контакт</label>
     <listViews>
         <fullName>All</fullName>
-        <columns>ClientName__c</columns>
         <columns>NAME</columns>
+        <columns>ClientName__c</columns>
+        <columns>Address__c</columns>
         <columns>GeneralPrice__c</columns>
-        <columns>GeneralDiscount__c</columns>
         <columns>CREATED_DATE</columns>
+        <columns>Client_Status__c</columns>
         <filterScope>Everything</filterScope>
+        <filters>
+            <field>NAME</field>
+            <operation>notContain</operation>
+            <value>test</value>
+        </filters>
         <label>All</label>
     </listViews>
     <nameField>

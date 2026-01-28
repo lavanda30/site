@@ -15,6 +15,7 @@ export default class CurtainImageGenerator extends LightningElement {
     @api curtainHeight;
     @api curtainHeightPoint;
     @api zbirka;
+    @api coefficientzbirku;
     @api tasma;
     @api tasmaPlace;
     @api curtainName;
@@ -42,7 +43,8 @@ export default class CurtainImageGenerator extends LightningElement {
             }
             this.curtainHeight = data.Height__c ? data.Height__c : '- висота -';
             this.curtainHeightPoint = data.HeightPoint__c ? data.HeightPoint__c : '- точка висоти -';
-            this.zbirka = data.Zbirka__c ? data.Zbirka__c : '- збірка -';
+            this.zbirka = data.zbirkaTasmu__c ? data.zbirkaTasmu__c : '- збірка -';
+            this.coefficientzbirku = data.CoefficientZbirki__c ? data.CoefficientZbirki__c : '- коефіціент -';
             this.tasma = data.Tasma__c ? data.Tasma__c : '- тасьма -';
             this.tasmaPlace = data.TasmaPlace__c ? data.TasmaPlace__c : '- місце тасьми -';
             this.curtainName = data.Name__c ? data.Name__c : '- назва тканини- ';
@@ -116,7 +118,7 @@ export default class CurtainImageGenerator extends LightningElement {
             ctx.fillText(textType, 295 - text6Type / 2, 172); // Центрируем по ширине
 
 // Текст тасьма (горизонтальный, центр нижней стороны)
-            const textTasma = this.tasma + ', ' + this.zbirka + ', ' + this.tasmaPlace;
+            const textTasma = this.tasma + ', ' + this.zbirka + ' ' + this.coefficientzbirku + ', ' + this.tasmaPlace;
             if (textTasma.length > 39 && textTasma.length <= 45) {
                 ctx.font = '16px Arial';
             } else if (textTasma.length > 45) {

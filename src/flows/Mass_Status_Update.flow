@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Curtain_Fields_Carniz_2_Assignment</name>
         <label>Curtain Fields Carniz 2 Assignment</label>
@@ -10,70 +11,77 @@
             <assignToReference>Selected_Curtains_Loop.Name2__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>formula_name</elementReference>
+                <elementReference>formula_name2</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
             <assignToReference>Selected_Curtains_Loop.Height2__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>formula_height</elementReference>
+                <elementReference>formula_height2</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
             <assignToReference>Selected_Curtains_Loop.Tasma2__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>formula_tasma</elementReference>
+                <elementReference>formula_tasma2</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
             <assignToReference>Selected_Curtains_Loop.Zbirka2__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>formula_zbirka</elementReference>
+                <elementReference>formula_zbirka2</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
             <assignToReference>Selected_Curtains_Loop.PoshivPrice2__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>formula_pricePoshiv</elementReference>
+                <elementReference>formula_pricePoshiv2</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
             <assignToReference>Selected_Curtains_Loop.CurtainDiscount2__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>formula_discount</elementReference>
+                <elementReference>formula_discount2</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
             <assignToReference>Selected_Curtains_Loop.Description2__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>formula_comment</elementReference>
+                <elementReference>formula_comment2</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
             <assignToReference>Selected_Curtains_Loop.HeightPoint2__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>formula_heightPoint</elementReference>
+                <elementReference>formula_heightPoint2</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
             <assignToReference>Selected_Curtains_Loop.ObrobkaNiz2__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>formula_obrobkaNiz</elementReference>
+                <elementReference>formula_obrobkaNiz2</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
             <assignToReference>Selected_Curtains_Loop.Price2__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>formula_price</elementReference>
+                <elementReference>formula_price2</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Selected_Curtains_Loop.Check2__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>formula_select2</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -130,7 +138,7 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>Selected_Curtains_Loop.Zbirka__c</assignToReference>
+            <assignToReference>Selected_Curtains_Loop.CoefficientZbirki__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>formula_zbirka</elementReference>
@@ -178,10 +186,23 @@
                 <elementReference>formula_price</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Selected_Curtains_Loop.Check__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>formula_select</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>Carniz_2_Presented</targetReference>
         </connector>
     </assignments>
+    <customProperties>
+        <name>ScreenProgressIndicator</name>
+        <value>
+            <stringValue>{&quot;location&quot;:&quot;top&quot;,&quot;type&quot;:&quot;simple&quot;}</stringValue>
+        </value>
+    </customProperties>
     <decisions>
         <name>Carniz_2_Presented</name>
         <label>Carniz 2 Presented</label>
@@ -195,7 +216,7 @@
             <name>Presented</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Selected_Curtains_Loop.Carniz2__c</leftValueReference>
+                <leftValueReference>Selected_Curtains_Loop.CarnizWigth2__c</leftValueReference>
                 <operator>NotEqualTo</operator>
             </conditions>
             <connector>
@@ -267,6 +288,11 @@
         <expression>IF(ISBLANK({!Comment}), {!Selected_Curtains_Loop.Description__c}, {!Comment})</expression>
     </formulas>
     <formulas>
+        <name>formula_comment2</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!Comment}), {!Selected_Curtains_Loop.Description2__c}, {!Comment})</expression>
+    </formulas>
+    <formulas>
         <name>formula_discount</name>
         <dataType>String</dataType>
         <expression>IF(
@@ -276,9 +302,23 @@
 )</expression>
     </formulas>
     <formulas>
+        <name>formula_discount2</name>
+        <dataType>String</dataType>
+        <expression>IF(
+            ISBLANK({!Discount}),
+            TEXT({!Selected_Curtains_Loop.CurtainDiscount2__c}),
+            SUBSTITUTE({!Discount}, &quot; %&quot;, &quot;&quot;)
+            )</expression>
+    </formulas>
+    <formulas>
         <name>formula_height</name>
         <dataType>String</dataType>
         <expression>IF(ISBLANK({!Height}), {!Selected_Curtains_Loop.Height__c}, {!Height})</expression>
+    </formulas>
+    <formulas>
+        <name>formula_height2</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!Height}), {!Selected_Curtains_Loop.Height2__c}, {!Height})</expression>
     </formulas>
     <formulas>
         <name>formula_heightPoint</name>
@@ -286,9 +326,19 @@
         <expression>IF(ISBLANK({!heightPoint}), TEXT({!Selected_Curtains_Loop.HeightPoint__c}), {!heightPoint})</expression>
     </formulas>
     <formulas>
+        <name>formula_heightPoint2</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!heightPoint}), TEXT({!Selected_Curtains_Loop.HeightPoint2__c}), {!heightPoint})</expression>
+    </formulas>
+    <formulas>
         <name>formula_name</name>
         <dataType>String</dataType>
         <expression>IF(ISBLANK({!Name}), {!Selected_Curtains_Loop.Name__c}, {!Name})</expression>
+    </formulas>
+    <formulas>
+        <name>formula_name2</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!Name}), {!Selected_Curtains_Loop.Name2__c}, {!Name})</expression>
     </formulas>
     <formulas>
         <name>formula_obrobkaNiz</name>
@@ -296,9 +346,19 @@
         <expression>IF(ISBLANK({!obrobkaNiz}), TEXT({!Selected_Curtains_Loop.ObrobkaNiz__c}), {!obrobkaNiz})</expression>
     </formulas>
     <formulas>
+        <name>formula_obrobkaNiz2</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!obrobkaNiz}), TEXT({!Selected_Curtains_Loop.ObrobkaNiz2__c}), {!obrobkaNiz})</expression>
+    </formulas>
+    <formulas>
         <name>formula_price</name>
         <dataType>String</dataType>
         <expression>IF(ISBLANK({!Price}), {!Selected_Curtains_Loop.Price__c}, {!Price})</expression>
+    </formulas>
+    <formulas>
+        <name>formula_price2</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!Price}), {!Selected_Curtains_Loop.Price2__c}, {!Price})</expression>
     </formulas>
     <formulas>
         <name>formula_pricePoshiv</name>
@@ -309,9 +369,36 @@
     SUBSTITUTE({!PricePoshiv}, &quot; грн.&quot;, &quot;&quot;))</expression>
     </formulas>
     <formulas>
+        <name>formula_pricePoshiv2</name>
+        <dataType>String</dataType>
+        <expression>IF(
+            ISBLANK({!PricePoshiv}),
+            TEXT({!Selected_Curtains_Loop.PoshivPrice2__c}),
+            SUBSTITUTE({!PricePoshiv}, &quot; грн.&quot;, &quot;&quot;))</expression>
+    </formulas>
+    <formulas>
+        <name>formula_select</name>
+        <dataType>Boolean</dataType>
+        <expression>IF(
+    {!Select}, {!Select}, {!Selected_Curtains_Loop.Check__c}  
+)</expression>
+    </formulas>
+    <formulas>
+        <name>formula_select2</name>
+        <dataType>Boolean</dataType>
+        <expression>IF(
+    {!Select2}, {!Select2}, {!Selected_Curtains_Loop.Check2__c}  
+)</expression>
+    </formulas>
+    <formulas>
         <name>formula_status</name>
         <dataType>String</dataType>
         <expression>IF(ISBLANK({!selectedStatus}), TEXT({!Selected_Curtains_Loop.Status__c}), {!selectedStatus})</expression>
+    </formulas>
+    <formulas>
+        <name>formula_status2</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!selectedStatus}), TEXT({!Selected_Curtains_Loop.Status2__c}), {!selectedStatus})</expression>
     </formulas>
     <formulas>
         <name>formula_tasma</name>
@@ -319,9 +406,19 @@
         <expression>IF(ISBLANK({!Tasma}), TEXT({!Selected_Curtains_Loop.Tasma__c}), {!Tasma})</expression>
     </formulas>
     <formulas>
+        <name>formula_tasma2</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!Tasma}), TEXT({!Selected_Curtains_Loop.Tasma2__c}), {!Tasma})</expression>
+    </formulas>
+    <formulas>
         <name>formula_zbirka</name>
         <dataType>String</dataType>
         <expression>IF(ISBLANK({!Zbirka}), TEXT({!Selected_Curtains_Loop.Zbirka__c}), {!Zbirka})</expression>
+    </formulas>
+    <formulas>
+        <name>formula_zbirka2</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!Zbirka}), TEXT({!Selected_Curtains_Loop.Zbirka2__c}), {!Zbirka})</expression>
     </formulas>
     <interviewLabel>Mass Status Update {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Mass Status Update</label>
@@ -509,6 +606,22 @@
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                 </fields>
+                <fields>
+                    <name>Select</name>
+                    <dataType>Boolean</dataType>
+                    <fieldText>Вибрати</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                </fields>
+                <fields>
+                    <name>Select2</name>
+                    <dataType>Boolean</dataType>
+                    <fieldText>Вибрати 2</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -567,7 +680,7 @@
             <inputParameters>
                 <name>columns</name>
                 <value>
-                    <stringValue>[{&quot;apiName&quot;:&quot;Name__c&quot;,&quot;guid&quot;:&quot;column-89bc&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Назва&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Room__c&quot;,&quot;guid&quot;:&quot;column-ffba&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Кімната&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;GeneralPrice__c&quot;,&quot;guid&quot;:&quot;column-d522&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:2,&quot;label&quot;:&quot;Загальна сумма&quot;,&quot;type&quot;:&quot;currency&quot;}]</stringValue>
+                    <stringValue>[{&quot;apiName&quot;:&quot;Name__c&quot;,&quot;guid&quot;:&quot;column-89bc&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Назва&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Type__c&quot;,&quot;guid&quot;:&quot;column-db33&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Тип&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Room__c&quot;,&quot;guid&quot;:&quot;column-ffba&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:2,&quot;label&quot;:&quot;Кімната&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;GeneralPrice__c&quot;,&quot;guid&quot;:&quot;column-d522&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:3,&quot;label&quot;:&quot;Загальна сумма&quot;,&quot;type&quot;:&quot;currency&quot;}]</stringValue>
                 </value>
             </inputParameters>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
