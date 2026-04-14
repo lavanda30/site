@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>lavandaPortalHome</members>
+        <members>lavandaPortalConfigurator</members>
+        <name>LightningComponentBundle</name>
+    </types>
+    <types>
+        <members>LavandaCurtains</members>
+        <name>Network</name>
+    </types>
+    <types>
+        <members>LavandaCurtains</members>
+        <name>CustomSite</name>
+    </types>
+    <types>
+        <members>SFDC_Default_Navigation_LavandaCurtains</members>
+        <name>NavigationMenu</name>
+    </types>
+    <version>63.0</version>
+</Package>
+

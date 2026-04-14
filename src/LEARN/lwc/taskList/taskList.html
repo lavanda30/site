@@ -1,0 +1,14 @@
+<!-- Task List -->
+<template>
+    <lightning-card title="Task List" icon-name="standard:task">
+        <lightning-button icon-name="action:refresh" onclick={handleReloadAction}></lightning-button>
+        <lightning-datatable
+                key-field="id"
+                data={tasks}
+                columns={columns}
+                hide-checkbox-column
+                onrowaction={handleRowAction}
+                class="slds-m-around_medium">
+        </lightning-datatable>
+    </lightning-card>
+</template>

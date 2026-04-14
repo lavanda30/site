@@ -1,0 +1,776 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAVANDA — Штори на замовлення | Київ та Бучанський район</title>
+    <meta name="description" content="Преміум штори на замовлення. Київ, Буча, Ірпінь. Безкоштовний замір, пошив, монтаж під ключ. Штори, гардини, тюль, римські. ☎ +38 (067) 867-06-79">
+    <meta name="keywords" content="штори на замовлення київ, пошив штор буча, гардини, тюль, римські штори, LAVANDA, ЖК Чайка">
+    <meta property="og:title" content="LAVANDA — Штори на замовлення, Київ">
+    <meta property="og:description" content="Штори ручної роботи з 1999 року. Безкоштовний замір, пошив, монтаж.">
+    <meta property="og:url" content="https://lavanda-curtains.netlify.app/">
+    <meta property="og:type" content="website">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"LAVANDA Штори","description":"Преміум штори та домашній текстиль ручної роботи з 1999 року.","url":"https://lavanda-curtains.netlify.app/","telephone":"0509466745","address":{"@type":"PostalAddress","streetAddress":"вул. Лобановського 30А, ЖК Чайка","addressLocality":"Бучанський район","addressRegion":"Київська область","addressCountry":"UA"},"priceRange":"₴₴₴","openingHours":"Mo-Sa 09:00-19:00"}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles-v3.css">
+    <link rel="stylesheet" href="shared/agent.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>(function(){ if(window.emailjs) emailjs.init('5u8myHW_d55KYxh9T'); })();</script>
+</head>
+<body>
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <span class="preloader-logo">LAVANDA</span>
+            <div class="preloader-bar"></div>
+        </div>
+    </div>
+
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">LAVANDA</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Відкрити меню"><span></span><span></span><span></span></button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#collections">Колекції</a></li>
+                <li><a href="#products">Товари</a></li>
+                <li><a href="#configurator">Конфігуратор</a></li>
+                <li><a href="#testimonials">Відгуки</a></li>
+                <li><a href="#contact" class="nav-cta">Консультація</a></li>
+                <li class="agent-nav-crm" id="agentNavCrm">
+                    <a href="#crm" class="agent-crm-link">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                        CRM
+                    </a>
+                </li>
+            </ul>
+            <div class="agent-auth" id="agentAuth">
+                <div class="agent-logged-in" id="agentLoggedIn">
+                    <span class="agent-user-chip" id="agentUserChip">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                        <span id="agentUserName">Агент</span>
+                    </span>
+                    <button class="agent-logout-btn" id="agentLogoutBtn" title="Вийти з CRM">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                    </button>
+                </div>
+                <button class="agent-login-btn" id="agentLoginBtn" title="Вхід для агентів LAVANDA">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    Агент
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <div class="curtain-animation">
+                <div class="curtain curtain-left"></div>
+                <div class="curtain curtain-right"></div>
+            </div>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <span class="hero-eyebrow animate-fade-up">Ексклюзивна колекція 2026</span>
+            <span class="hero-subtitle animate-fade-up">Створено для вашого дому</span>
+            <h1 class="hero-title animate-fade-up delay-1">Де світло зустрічає<br><em>Елегантність</em></h1>
+            <p class="hero-description animate-fade-up delay-2">Преміум штори<br>Ми створюємо атмосферу вашого житла</p>
+            <div class="hero-buttons animate-fade-up delay-3">
+                <a href="#collections" class="btn btn-primary">Переглянути колекції</a>
+                <a href="#configurator" class="btn btn-secondary">Розрахувати вартість</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="brand-strip">
+        <div class="container">
+            <div class="brand-stats">
+                <div class="brand-stat"><strong>11 700+</strong><span>задоволених клієнтів</span></div>
+                <div class="brand-divider"></div>
+                <div class="brand-stat"><strong>25+ років</strong><span>досвіду, з 1999 року</span></div>
+                <div class="brand-divider"></div>
+                <div class="brand-stat"><strong>Якісні матеріали</strong><span>перевірені тканини</span></div>
+                <div class="brand-divider"></div>
+                <div class="brand-stat"><strong>Пошив</strong><span>заміри, пошив, монтаж</span></div>
+                <div class="brand-divider"></div>
+                <div class="brand-stat"><strong>Обслуговування</strong><span>прання, прасування</span></div>
+            </div>
+        </div>
+    </div>
+
+    <section class="categories" id="collections">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Наші колекції</span>
+                <h2 class="section-title">Підібрано для <em>кожного простору</em></h2>
+            </div>
+            <div class="categories-grid">
+                <article class="category-card category-card-large">
+                    <div class="category-image"><img src="Assets/%D1%88%D1%82%D0%BE%D1%80%D0%B8%20%D0%B7%20%D1%82%D1%8E%D0%BB%D1%8F%D0%BC%D1%96%20%D0%B3%D0%B0%D1%80%D0%BD%D1%96%20%D0%B1%D0%B0%D0%B3%D0%B0%D1%82%D0%BE.jpg" alt="Вітальня"><div class="category-overlay"></div></div>
+                    <div class="category-content"><span class="category-tag">Хіт сезону</span><h3>Вітальня</h3><p>Елегантні портьєри для головної кімнати</p><a href="#configurator" class="category-link"><span>Розрахувати</span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+                </article>
+                <article class="category-card">
+                    <div class="category-image"><img src="Assets/%D1%88%D1%82%D0%BE%D1%80%D0%B8%20%D1%81%D0%BF%D0%B0%D0%BB%D1%8C%D0%BD%D1%8F%20%D0%B1%D0%B5%D0%B6%D0%B5%D0%B2%D1%96.jpg" alt="Спальня"><div class="category-overlay"></div></div>
+                    <div class="category-content"><h3>Спальня</h3><p>М'яке затемнення для глибокого сну</p><a href="#configurator" class="category-link"><span>Розрахувати</span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+                </article>
+                <article class="category-card">
+                    <div class="category-image"><img src="Assets/%D1%82%D1%8E%D0%BB%D1%8C%20%D0%BC%D0%B0%D0%BD%D1%81%D0%B0%D1%80%D0%B4%D0%BD%D0%B5%20%D0%B2%D1%96%D0%BA%D0%BD%D0%BE.jpg" alt="Кухня"><div class="category-overlay"></div></div>
+                    <div class="category-content"><h3>Кухня та їдальня</h3><p>Легкий тюль для свіжих просторів</p><a href="#configurator" class="category-link"><span>Розрахувати</span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+                </article>
+                <article class="category-card category-card-wide">
+                    <div class="category-image"><img src="Assets/%D1%88%D1%82%D0%BE%D1%80%D0%B8%20%D0%B7%20%D1%82%D1%8E%D0%BB%D1%8F%D0%BC%D1%96%20%D0%B3%D0%B0%D1%80%D0%BD%D1%96%20%D0%B1%D0%B0%D0%B3%D0%B0%D1%82%D0%BE%20%D1%80%D0%B0%D0%BA%D1%83%D1%80%D1%81%202.jpg" alt="Комплект"><div class="category-overlay"></div></div>
+                    <div class="category-content"><span class="category-tag">Новинка 2026</span><h3>Комплект штора + гардина</h3><p>Гармонійне поєднання портьєри та легкої гардини</p><a href="#configurator" class="category-link"><span>Розрахувати</span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Популярні позиції</span>
+                <h2 class="section-title">Обрані <em>з любов'ю</em></h2>
+            </div>
+            <div class="products-grid">
+                <article class="product-card"><div class="product-image"><img src="Assets/photo_2026-03-28_10-43-45.jpg" alt="Оксамит"><span class="product-badge">Хіт</span></div><div class="product-info"><span class="product-category">Оксамитова колекція</span><h3 class="product-name">Оксамитові портьєри</h3><p class="product-description">Преміум оксамит з термопідкладкою. Затишок, статусність, довговічність.</p><a href="#configurator" class="product-calc-link">Розрахувати вартість →</a></div></article>
+                <article class="product-card"><div class="product-image"><img src="Assets/%D1%82%D1%8E%D0%BB%D1%8C%20%D0%B2%D0%B5%D0%BB%D0%B8%D0%BA%D0%B0%20%D0%B4%D1%96%D0%BC.jpg" alt="Гардина"><span class="product-badge product-badge-new">Новинка</span></div><div class="product-info"><span class="product-category">Гардини / Тюль</span><h3 class="product-name">Ранковий туман</h3><p class="product-description">Ефірна лляна суміш — м'яке розсіяне світло, відчуття легкості та простору.</p><a href="#configurator" class="product-calc-link">Розрахувати вартість →</a></div></article>
+                <article class="product-card"><div class="product-image"><img src="Assets/%D1%88%D1%82%D0%BE%D1%80%D0%B8%20%D0%BA%D1%96%D0%BC%D0%BD%D0%B0%D1%82%D0%B0.jpg" alt="Льон"></div><div class="product-info"><span class="product-category">Натуральна колекція</span><h3 class="product-name">Льняна гармонія</h3><p class="product-description">100% органічний льон — природна фактура, тепло натурального матеріалу.</p><a href="#configurator" class="product-calc-link">Розрахувати вартість →</a></div></article>
+                <article class="product-card"><div class="product-image"><img src="Assets/%D1%80%D0%B8%D0%BC%D1%81%D1%8C%D0%BA%D0%B0%20%D1%88%D1%82%D0%BE%D1%80%D0%B0%20%D0%B2%D1%96%D0%B4%D0%BA%D1%80%D0%B8%D1%82%D0%B0.jpg" alt="Римська"></div><div class="product-info"><span class="product-category">Римська штора</span><h3 class="product-name">Римська класика</h3><p class="product-description">Елегантна римська штора — сучасний дизайн, баланс між світлом і приватністю.</p><a href="#configurator" class="product-calc-link">Розрахувати вартість →</a></div></article>
+                <article class="product-card"><div class="product-image"><img src="Assets/%D1%88%D1%82%D0%BE%D1%80%D0%B8%20%D0%BB%D1%8E%D0%B2%D0%B5%D1%80%D1%81%D0%B8.jpg" alt="Люверси"></div><div class="product-info"><span class="product-category">Люверсна колекція</span><h3 class="product-name">Штори-люверси</h3><p class="product-description">Стильні люверсні штори — сучасний вигляд і плавне ковзання по карнізу.</p><a href="#configurator" class="product-calc-link">Розрахувати вартість →</a></div></article>
+                <article class="product-card"><div class="product-image"><img src="Assets/%D1%88%D1%82%D0%BE%D1%80%D0%B8%20%D0%B4%D0%B8%D1%82%D1%8F%D1%87%D0%B0%20%D0%B2%20%D0%BD%D1%96%D1%88%D1%96.jpg" alt="Блекаут"></div><div class="product-info"><span class="product-category">Дабл блекаут</span><h3 class="product-name">Повне затемнення</h3><p class="product-description">Дабл блекаут — 100% захист від світла для ідеального сну та домашнього кінотеатру.</p><a href="#configurator" class="product-calc-link">Розрахувати вартість →</a></div></article>
+            </div>
+            <div class="products-cta"><a href="#contact" class="btn btn-outline">Замовити консультацію</a></div>
+        </div>
+    </section>
+
+    <section class="configurator" id="configurator">
+        <div class="container">
+            <div class="configurator-wrapper">
+                <div class="configurator-preview">
+                    <div class="preview-window">
+                        <div class="preview-curtain" id="previewCurtain"><div class="preview-fabric"></div></div>
+                        <div class="preview-room"></div>
+                    </div>
+                    <div class="preview-info"><span>Попередній перегляд кольору</span></div>
+                    <div class="preview-note">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                        <p>Точний розрахунок — після безкоштовного виміру майстром.</p>
+                    </div>
+                </div>
+                <div class="configurator-options">
+                    <div class="section-header">
+                        <span class="section-subtitle">Студія індивідуального дизайну</span>
+                        <h2 class="section-title">Розрахуйте <em>вартість</em> онлайн</h2>
+                        <p class="section-description">Оберіть тип виробу, колір та збірку — отримайте орієнтовну ціну миттєво.</p>
+                    </div>
+                    <form class="config-form" id="configForm">
+                        <div class="config-step">
+                            <h4 class="config-label">1. Тип виробу</h4>
+                            <div class="fabric-options">
+                                <label class="fabric-option"><input type="radio" name="fabric" value="curtain" checked><span class="fabric-swatch fabric-swatch-curtain"></span><span class="fabric-name">Штора</span></label>
+                                <label class="fabric-option"><input type="radio" name="fabric" value="gardina"><span class="fabric-swatch fabric-swatch-gardina"></span><span class="fabric-name">Гардина / Тюль</span></label>
+                            </div>
+                        </div>
+                        <div class="config-step">
+                            <h4 class="config-label">2. Колір тканини</h4>
+                            <div class="color-options color-options-grid">
+                                <label class="color-option"><input type="radio" name="color" value="white"><span class="color-swatch" style="background:#FFFFFF;border:1px solid #e0e0e0"></span><span class="color-name">Білий</span></label>
+                                <label class="color-option"><input type="radio" name="color" value="milk" checked><span class="color-swatch" style="background:#FAF9F6"></span><span class="color-name">Молочний</span></label>
+                                <label class="color-option"><input type="radio" name="color" value="ivory"><span class="color-swatch" style="background:#FFFFF0;border:1px solid #e0e0e0"></span><span class="color-name">Слонова кістка</span></label>
+                                <label class="color-option"><input type="radio" name="color" value="cream"><span class="color-swatch" style="background:#FFFDD0;border:1px solid #e8e8e8"></span><span class="color-name">Кремовий</span></label>
+                                <label class="color-option"><input type="radio" name="color" value="beige"><span class="color-swatch" style="background:#F5EFE6"></span><span class="color-name">Бежевий</span></label>
+                                <label class="color-option"><input type="radio" name="color" value="sand"><span class="color-swatch" style="background:#E8D5B7"></span><span class="color-name">Пісочний</span></label>
+                                <label class="color-option"><input type="radio" name="color" value="wheat"><span class="color-swatch" style="background:#F5DEB3"></span><span class="color-name">Пшеничний</span></label>
+                                <label class="color-option"><input type="radio" name="color" value="champagne"><span class="color-swatch" style="background:#F7E7CE"></span><span class="color-name">Шампань</span></label>
+                                <label class="color-option"><input type="radio" name="color" value="linen"><span class="color-swatch" style="background:#E8E0D0"></span><span class="color-name">Льон</span></label>
+                                <label class="color-option"><input type="radio" name="color" value="pearl"><span class="color-swatch" style="background:#EAE0D5"></span><span class="color-name">Перлинний</span></label>
+                                <label class="color-option"><input type="radio" name="color" value="lavender"><span class="color-swatch" style="background:#C8B6E2"></span><span class="color-name">Лавандовий</span></label>
+                                <label class="color-option"><input type="radio" name="color" value="powder"><span class="color-swatch" style="background:#E8C4C4"></span><span class="color-name">Пудровий</span></label>
+                                <label class="color-option"><input type="radio" name="color" value="blush"><span class="color-swatch" style="background:#D4A5A5"></span><span class="color-name">Рожевий</span></label>
+                                <label class="color-option"><input type="radio" name="color" value="mint"><span class="color-swatch" style="background:#B5D5C5"></span><span class="color-name">М'ятний</span></label>
+                                <label class="color-option"><input type="radio" name="color" value="sage"><span class="color-swatch" style="background:#8B9A7D"></span><span class="color-name">Шавлія</span></label>
+                                <label class="color-option"><input type="radio" name="color" value="dustyblue"><span class="color-swatch" style="background:#B0C4DE"></span><span class="color-name">Пильний блакит</span></label>
+                                <label class="color-option"><input type="radio" name="color" value="mocha"><span class="color-swatch" style="background:#C4A882"></span><span class="color-name">Мокко</span></label>
+                                <label class="color-option"><input type="radio" name="color" value="taupe"><span class="color-swatch" style="background:#B5A89A"></span><span class="color-name">Тауп</span></label>
+                                <label class="color-option"><input type="radio" name="color" value="stone"><span class="color-swatch" style="background:#9E9289"></span><span class="color-name">Кам'яний</span></label>
+                                <label class="color-option"><input type="radio" name="color" value="graphite"><span class="color-swatch" style="background:#2B2B2B"></span><span class="color-name">Графіт</span></label>
+                            </div>
+                        </div>
+                        <div class="config-step">
+                            <h4 class="config-label">3. Ширина карниза</h4>
+                            <div class="dimension-inputs dimension-inputs-single">
+                                <div class="input-group">
+                                    <label for="width">Ширина карниза (см)</label>
+                                    <input type="number" id="width" name="width" value="200" min="50" max="600" placeholder="Наприклад: 250">
+                                </div>
+                            </div>
+                            <p class="input-hint">Метраж розраховується автоматично залежно від типу збірки</p>
+                        </div>
+                        <div class="config-step">
+                            <h4 class="config-label">4. Збірка тасьми</h4>
+                            <div class="gather-options">
+                                <label class="gather-option"><input type="radio" name="style" value="tape15" checked><span class="gather-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 8h32M4 8v28M8 8v28M12 8v28M16 8v28M20 8v28M24 8v28M28 8v28M32 8v28M36 8v28"/></svg></span><span class="gather-coeff-label">× 1.5</span><span class="gather-name-label">Тасьма</span></label>
+                                <label class="gather-option"><input type="radio" name="style" value="tape20"><span class="gather-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 8h32M4 8v28M8 8v28M12 8v28M16 8v28M20 8v28M24 8v28M28 8v28M32 8v28M36 8v28"/></svg></span><span class="gather-coeff-label">× 2.0</span><span class="gather-name-label">Тасьма</span></label>
+                                <label class="gather-option"><input type="radio" name="style" value="tape25"><span class="gather-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 8h32M4 8v28M8 8v28M12 8v28M16 8v28M20 8v28M24 8v28M28 8v28M32 8v28M36 8v28"/></svg></span><span class="gather-coeff-label">× 2.5</span><span class="gather-name-label">Тасьма</span></label>
+                                <label class="gather-option"><input type="radio" name="style" value="tape30"><span class="gather-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 8h32M4 8v28M8 8v28M12 8v28M16 8v28M20 8v28M24 8v28M28 8v28M32 8v28M36 8v28"/></svg></span><span class="gather-coeff-label">× 3.0</span><span class="gather-name-label">Тасьма</span></label>
+                                <label class="gather-option"><input type="radio" name="style" value="eyelet"><span class="gather-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="4"/><circle cx="20" cy="10" r="4"/><circle cx="30" cy="10" r="4"/><path d="M6 14v22M14 14v22M16 14v22M24 14v22M26 14v22M34 14v22"/></svg></span><span class="gather-coeff-label">× 2.0</span><span class="gather-name-label">Люверси</span></label>
+                            </div>
+                        </div>
+                        <div class="config-step">
+                            <h4 class="config-label">5. Якість тканини</h4>
+                            <div class="quality-slider-wrap">
+                                <div id="qualityPriceHint" style="display:none"></div>
+                                <input type="range" id="qualitySlider" name="quality" min="0" max="4" step="1" value="2" class="quality-slider">
+                                <div class="quality-labels">
+                                    <span>Економ</span><span>Доступно</span><span class="quality-mid">Середнє</span><span>Краще</span><span>Преміум</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="config-summary">
+                            <div class="summary-price-block">
+                                <div class="summary-price">
+                                    <span class="summary-price-label">Орієнтовна вартість</span>
+                                    <strong id="totalPrice" class="summary-price-value">11 560 ₴</strong>
+                                </div>
+                                <p class="summary-price-note">* Точна ціна залежить від детального прорахунку, фінального обсягу та можливих знижок</p>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-full">Отримати розрахунок</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header section-header-center">
+                <span class="section-subtitle">Відгуки клієнтів</span>
+                <h2 class="section-title">Вони вже <em>живуть у красивих домах</em></h2>
+            </div>
+            <div class="testimonials-slider" id="testimonialsSlider">
+                <div class="testimonial-track">
+                    <div class="testimonial-card">
+                        <div class="testimonial-image"><img src="Assets/%D1%88%D1%82%D0%BE%D1%80%D0%B8%20%D0%B7%20%D1%82%D1%8E%D0%BB%D1%8F%D0%BC%D1%96%20%D0%B3%D0%B0%D1%80%D0%BD%D1%96%20%D0%B1%D0%B0%D0%B3%D0%B0%D1%82%D0%BE.jpg" alt="Вітальня"></div>
+                        <div class="testimonial-content">
+                            <div class="testimonial-rating"><svg width="20" height="20" viewBox="0 0 24 24" fill="#C8B6E2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="20" height="20" viewBox="0 0 24 24" fill="#C8B6E2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="20" height="20" viewBox="0 0 24 24" fill="#C8B6E2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="20" height="20" viewBox="0 0 24 24" fill="#C8B6E2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="20" height="20" viewBox="0 0 24 24" fill="#C8B6E2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+                            <blockquote>"Живемо на Чайці. Повністю облаштувала будинок гардинами. Широкий вибір, давали каталог додому. Привітна господиня Аня і її мама. Дуже рекомендую!"</blockquote>
+                            <div class="testimonial-author"><div class="testimonial-avatar-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div><div><strong>Альона С.</strong><span>Google відгук</span></div></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-image"><img src="Assets/%D1%88%D1%82%D0%BE%D1%80%D0%B8%20%D1%81%D0%BF%D0%B0%D0%BB%D1%8C%D0%BD%D1%8F%20%D0%B1%D0%B5%D0%B6%D0%B5%D0%B2%D1%96.jpg" alt="Спальня"></div>
+                        <div class="testimonial-content">
+                            <div class="testimonial-rating"><svg width="20" height="20" viewBox="0 0 24 24" fill="#C8B6E2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="20" height="20" viewBox="0 0 24 24" fill="#C8B6E2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="20" height="20" viewBox="0 0 24 24" fill="#C8B6E2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="20" height="20" viewBox="0 0 24 24" fill="#C8B6E2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="20" height="20" viewBox="0 0 24 24" fill="#C8B6E2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+                            <blockquote>"Замовляли штори в кілька кімнат. Все швидко, якісно і експертно. Допомогли підібрати, підказали що краще. Чудовий вибір тканин і дизайнерські ідеї!"</blockquote>
+                            <div class="testimonial-author"><div class="testimonial-avatar-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div><div><strong>Olexandr B.</strong><span>Google відгук</span></div></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-image"><img src="Assets/%D1%88%D1%82%D0%BE%D1%80%D0%B0%20%D1%96%20%D1%82%D1%8E%D0%BB%D1%8C%20%D0%B3%D0%B0%D1%80%D0%BD%D1%96.jpg" alt="Інтер'єр"></div>
+                        <div class="testimonial-content">
+                            <div class="testimonial-rating"><svg width="20" height="20" viewBox="0 0 24 24" fill="#C8B6E2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="20" height="20" viewBox="0 0 24 24" fill="#C8B6E2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="20" height="20" viewBox="0 0 24 24" fill="#C8B6E2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="20" height="20" viewBox="0 0 24 24" fill="#C8B6E2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="20" height="20" viewBox="0 0 24 24" fill="#C8B6E2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+                            <blockquote>"Чудовий магазин. Ціна хороша, нижча за київські. Пошили дуже круто. Зробили все під ключ — від карнізів до навісу і прасування. Однозначно раджу!"</blockquote>
+                            <div class="testimonial-author"><div class="testimonial-avatar-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div><div><strong>Анна</strong><span>Google відгук</span></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonials-nav">
+                    <button class="slider-btn slider-prev" aria-label="Попередній"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></button>
+                    <div class="slider-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span></div>
+                    <button class="slider-btn slider-next" aria-label="Наступний"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+                </div>
+                <div style="text-align:center;margin-top:1.25rem;">
+                    <a href="https://www.google.com/search?kgmid=/g/11vl0txv0h&q=%D0%A8%D1%82%D0%BE%D1%80%D0%B8+Lavanda#lrd=0x40d4cba8f09b4a5d:0x1056dab1fb5e490f,1,,,," target="_blank" rel="noopener" class="google-reviews-link">
+                        <svg width="16" height="16" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                        Читати всі відгуки в Google
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="contact">
+        <div class="cta-bg">
+            <img src="Assets/%D1%88%D1%82%D0%BE%D1%80%D0%B8%20%D0%B7%20%D1%82%D1%8E%D0%BB%D1%8F%D0%BC%D1%96%20%D0%B3%D0%B0%D1%80%D0%BD%D1%96%20%D0%B1%D0%B0%D0%B3%D0%B0%D1%82%D0%BE%20%D1%80%D0%B0%D0%BA%D1%83%D1%80%D1%81%202.jpg" alt="Інтер'єр LAVANDA">
+            <div class="cta-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="cta-content">
+                <span class="section-subtitle">Готові до перетворення простору?</span>
+                <h2 class="cta-title">Замовте безкоштовну <em>консультацію з виміром</em></h2>
+                <p class="cta-description">Наші майстри приїдуть до вас, зроблять заміри, підберуть тканину та запропонують рішення під ваш інтер'єр</p>
+                <form class="cta-form" id="ctaForm">
+                    <div class="form-row">
+                        <input type="text" aria-label="Ваше ім'я" placeholder="Ваше ім'я">
+                        <input type="tel" aria-label="Номер телефону" placeholder="Номер телефону" required>
+                    </div>
+                    <div class="form-row">
+                        <select aria-label="Що вас цікавить" style="width:100%">
+                            <option value="">Що вас цікавить?</option>
+                            <option value="Штори">Штори</option>
+                            <option value="Гардини / Тюль">Гардини / Тюль</option>
+                            <option value="Римські штори">Римські штори</option>
+                            <option value="Ролети">Ролети</option>
+                            <option value="Консультація">Консультація</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-large">Отримати консультацію</button>
+                </form>
+                <div class="cta-contacts">
+                    <a href="tel:0509466745" class="cta-contact-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l1.27-.85a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>+38 (067) 867-06-79</span></a>
+                    <div class="cta-contact-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>ЖК Чайка, вул. Лобановського 30А, Бучанський р-н</span></div>
+                    <a href="https://instagram.com/shtory_chayka" class="cta-contact-item" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg><span>@shtory_chayka</span></a>
+                </div>
+                <div class="cta-features">
+                    <div class="cta-feature"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Безкоштовний вимір</span></div>
+                    <div class="cta-feature"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Зразки тканин</span></div>
+                    <div class="cta-feature"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Монтаж під ключ</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CRM -->
+    <section class="crm-section" id="crm">
+        <div class="crm-topbar">
+            <div class="crm-topbar-left">
+                <span class="crm-topbar-title"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg> LAVANDA CRM</span>
+                <span class="crm-topbar-user" id="crmUserBadge"></span>
+                <div class="crm-tabs">
+                    <button class="crm-tab active" id="tabCrm">🗂 CRM</button>
+                    <button class="crm-tab" id="tabInstagram">📱 Instagram</button>
+                </div>
+            </div>
+            <div class="crm-topbar-right" id="crmTopRight">
+                <button class="crm-btn crm-btn-outline crm-btn-sm" id="crmNewContactBtn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg> Новий контакт</button>
+            </div>
+        </div>
+        <div class="crm-body" id="crmBody">
+            <aside class="crm-contacts-panel">
+                <div class="crm-panel-hd"><span class="crm-panel-label">Контакти</span><span class="crm-contacts-count" id="crmContactsCount"></span></div>
+                <div class="crm-search-wrap"><input type="text" class="crm-search" id="crmSearch" placeholder="Пошук за ім'ям або телефоном…"></div>
+                <div class="crm-contacts-list" id="crmContactsList"><div class="crm-empty"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg><p>Контакти завантажуються…</p></div></div>
+            </aside>
+            <main class="crm-curtains-panel">
+                <div class="crm-curtains-hd" id="crmCurtainsHd">
+                    <div class="crm-curtains-hd-info"><span class="crm-curtains-contact-name" id="crmSelectedName">—</span><span class="crm-curtains-contact-meta" id="crmSelectedMeta"></span></div>
+                    <div class="crm-curtains-hd-actions">
+                        <button class="crm-btn crm-btn-outline crm-btn-sm" id="crmEditContactBtn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4z"/></svg> Редагувати</button>
+                        <button class="crm-btn crm-btn-primary crm-btn-sm" id="crmNewCurtainBtn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg> Нова штора</button>
+                    </div>
+                </div>
+                <div class="crm-curtains-placeholder" id="crmCurtainsPlaceholder"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg><p>Оберіть контакт, щоб побачити штори</p></div>
+                <div class="crm-curtains-grid" id="crmCurtainsGrid" style="display:none"></div>
+            </main>
+        </div>
+        <div id="igPanel" style="display:none">
+            <div id="igIdleState" class="ig-idle">
+                <div class="ig-idle-icon">📱</div>
+                <h3>Генератор постів для Instagram</h3>
+                <p>Натисніть кнопку — AI проаналізує актуальні тренди для Київської області і запропонує 10 тем для постів.</p>
+                <button class="crm-btn crm-btn-primary" id="igFindBtn" style="font-size:0.95rem;padding:0.65rem 1.5rem">🔍 Знайти актуальне</button>
+            </div>
+            <div id="igLoadingState" class="ig-loading" style="display:none">
+                <div class="ig-loading-spinner"></div>
+                <p id="igLoadingText">Аналізую тренди…</p>
+            </div>
+            <div id="igTopicsState" style="display:none;padding:1.5rem">
+                <div class="ig-topics-hd">
+                    <span class="ig-topics-title">Оберіть 1–3 теми для посту</span>
+                    <span class="ig-selected-count" id="igSelectedCount"></span>
+                </div>
+                <div class="ig-topics-list" id="igTopicsList"></div>
+                <div class="ig-topics-actions">
+                    <button class="crm-btn crm-btn-primary" id="igGenBtn" disabled>✍️ Генерувати пост</button>
+                    <button class="crm-btn crm-btn-outline" id="igResetBtn">← Назад</button>
+                </div>
+            </div>
+            <div id="igResultState" style="display:none;padding:1.5rem">
+                <div class="ig-result-topic" id="igResultTopic"></div>
+                <div class="ig-result-card">
+                    <div class="ig-result-card-hd">✍️ Текст посту</div>
+                    <div class="ig-post-text" id="igPostText"></div>
+                    <div class="ig-hashtags" id="igHashtags"></div>
+                </div>
+                <div class="ig-photo-tips" id="igPhotoTips" style="display:none"></div>
+                <div class="ig-result-actions">
+                    <button class="crm-btn crm-btn-instagram" id="igCopyBtn">📋 Скопіювати пост + хештеги</button>
+                    <button class="crm-btn crm-btn-outline" id="igResetBtn">🔄 Нова тема</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Drawer -->
+    <div class="crm-overlay" id="crmContactOverlay"><div class="crm-drawer"><div class="crm-drawer-hd"><span class="crm-drawer-title" id="crmContactDrawerTitle">Новий контакт</span><button class="crm-drawer-close" id="crmCloseContactDrawer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div><div class="crm-drawer-body"><form id="crmContactForm" autocomplete="off"><div class="crm-form-row"><div class="crm-form-group"><label class="crm-label">Ім'я *</label><input type="text" class="crm-input" name="Name" required placeholder="Ім'я та прізвище"></div><div class="crm-form-group"><label class="crm-label">Телефон</label><input type="tel" class="crm-input" name="ClientName__c" placeholder="+380…"></div></div><div class="crm-form-row"><div class="crm-form-group"><label class="crm-label">Адреса</label><input type="text" class="crm-input" name="Address__c" placeholder="Вулиця, будинок, квартира"></div><div class="crm-form-group"><label class="crm-label">Знижка</label><select class="crm-input" name="GeneralDiscount__c"><option value="">— без знижки —</option><option value="2">2%</option><option value="3">3%</option><option value="4">4%</option><option value="5">5%</option><option value="6">6%</option><option value="7">7%</option><option value="8">8%</option><option value="10">10%</option><option value="13">13%</option><option value="14">14%</option><option value="15">15%</option></select></div></div><div class="crm-form-group"><label class="crm-label">Коментар</label><textarea class="crm-input" name="Description__c" rows="2" placeholder="Нотатки…"></textarea></div></form></div><div class="crm-drawer-ft"><button class="crm-btn crm-btn-outline" id="crmCancelContact">Скасувати</button><button class="crm-btn crm-btn-primary" id="crmSaveContact"><span id="crmSaveContactTxt">Зберегти</span></button></div></div></div>
+
+    <!-- Curtain Drawer — поля 1:1 з Salesforce -->
+    <div class="crm-overlay crm-modal-overlay" id="crmCurtainOverlay">
+      <div class="crm-drawer crm-drawer-wide">
+        <div class="crm-drawer-hd">
+          <span class="crm-drawer-title" id="crmCurtainDrawerTitle">Нова штора</span>
+          <button class="crm-drawer-close" id="crmCloseCurtainDrawer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+        </div>
+        <div class="crm-drawer-body">
+          <form id="crmCurtainForm" autocomplete="off">
+
+            <div class="crm-section-label">Основна інформація</div>
+            <div class="crm-form-row">
+              <div class="crm-form-group">
+                <label class="crm-label">Тип *</label>
+                <select class="crm-input" name="Type__c" required>
+                  <option value="">— Оберіть —</option>
+                  <option value="Штора">Штора</option>
+                  <option value="Тюль">Тюль</option>
+                </select>
+              </div>
+              <div class="crm-form-group">
+                <label class="crm-label">Кімната</label>
+                <input type="text" class="crm-input" name="Room__c" placeholder="Спальня…">
+              </div>
+            </div>
+            <div class="crm-form-group">
+              <label class="crm-label">Назва тканини</label>
+              <input type="text" class="crm-input" name="Name__c" placeholder="Назва або артикул">
+            </div>
+
+            <div class="crm-divider"></div>
+            <div class="crm-section-label">Розміри</div>
+            <div class="crm-form-row">
+              <div class="crm-form-group">
+                <label class="crm-label">Ширина карнізу (см)</label>
+                <input type="number" class="crm-input crm-calc" name="CarnizWigth__c" placeholder="300">
+              </div>
+              <div class="crm-form-group">
+                <label class="crm-label">або ширина тканини вручну (см)</label>
+                <input type="number" class="crm-input crm-calc" name="CustomWigth__c">
+              </div>
+            </div>
+            <div class="crm-form-row">
+              <div class="crm-form-group">
+                <label class="crm-label">Висота (см)</label>
+                <input type="number" class="crm-input" name="Height__c" placeholder="280">
+              </div>
+              <div class="crm-form-group">
+                <label class="crm-label">Точка висоти</label>
+                <select class="crm-input" name="HeightPoint__c">
+                  <option value="">— —</option>
+                  <option value="від краю до краю">від краю до краю</option>
+                  <option value="до карнізу">до карнізу</option>
+                  <option value="до гачка">до гачка</option>
+                  <option value="до верхньої петлі">до верхньої петлі</option>
+                  <option value="до другої петлі">до другої петлі</option>
+                  <option value="до нижньої петлі">до нижньої петлі</option>
+                  <option value="до тасьми">до тасьми</option>
+                </select>
+              </div>
+            </div>
+            <div class="crm-form-group crm-form-group-sm">
+              <label class="crm-label">Кількість (шт.)</label>
+              <select class="crm-input crm-calc" name="Quantity__c">
+                <option value="1" selected>1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </div>
+
+            <div class="crm-divider"></div>
+            <div class="crm-section-label">Збірка та тасьма</div>
+            <div class="crm-form-row">
+              <div class="crm-form-group">
+                <label class="crm-label">Тип збірки</label>
+                <select class="crm-input crm-calc" name="CoefficientZbirki__c">
+                  <option value="">— —</option>
+                  <option value="1:1,5">Enigma 1:1,5</option>
+                  <option value="1:1,65">Enigma 1:1,65</option>
+                  <option value="1:1,8">Enigma 1:1,8</option>
+                  <option value="1:2">Enigma 1:2</option>
+                  <option value="1:2,5">Enigma 1:2,5</option>
+                  <option value="1:3">Enigma 1:3</option>
+                  <option value="1:1,8">Sofora 1:1,8</option>
+                  <option value="1:2">Sofora 1:2</option>
+                  <option value="1:1">Pinella ×1</option>
+                  <option value="1:1,5">Хвиля 1:1,5</option>
+                  <option value="1:2">Хвиля 1:2</option>
+                  <option value="1:2">Люверсна ×2</option>
+                  <option value="1:2">Глайдерна 1:2 + FES</option>
+                </select>
+              </div>
+              <div class="crm-form-group">
+                <label class="crm-label">Збірка тасьми</label>
+                <select class="crm-input" name="zbirkaTasmu__c">
+                  <option value="">— —</option>
+                  <option value="Enigma">Enigma</option>
+                  <option value="Sofora">Sofora</option>
+                  <option value="Хвиля">Хвиля</option>
+                  <option value="Люверсна">Люверсна</option>
+                  <option value="Глайдерна">Глайдерна</option>
+                </select>
+              </div>
+            </div>
+            <div class="crm-form-row">
+              <div class="crm-form-group">
+                <label class="crm-label">Тасьма</label>
+                <select class="crm-input" name="Tasma__c">
+                  <option value="">— —</option>
+                  <option value="Прозора фіксована">Прозора фіксована</option>
+                  <option value="ХБ фіксована">ХБ фіксована</option>
+                  <option value="Не фіксована">Не фіксована</option>
+                </select>
+              </div>
+              <div class="crm-form-group">
+                <label class="crm-label">Місце тасьми</label>
+                <input type="text" class="crm-input" name="TasmaPlace__c" placeholder="в край, посередині…">
+              </div>
+            </div>
+
+            <div class="crm-divider"></div>
+            <div class="crm-section-label">Ціни (грн/м)</div>
+            <div class="crm-form-row">
+              <div class="crm-form-group">
+                <label class="crm-label">Ціна тканини (грн/м)</label>
+                <input type="number" class="crm-input crm-calc" name="Price__c" placeholder="0" min="0">
+              </div>
+              <div class="crm-form-group">
+                <label class="crm-label">Ціна тасьми (грн/м)</label>
+                <select class="crm-input crm-calc" name="TasmaPrice__c">
+                  <option value="">— —</option>
+                  <option value="35">35</option>
+                  <option value="45">45</option>
+                  <option value="55">55</option>
+                  <option value="65">65</option>
+                  <option value="85">85</option>
+                  <option value="110">110</option>
+                  <option value="130">130</option>
+                  <option value="140">140</option>
+                  <option value="150">150</option>
+                  <option value="160">160</option>
+                  <option value="230">230</option>
+                </select>
+              </div>
+            </div>
+            <div class="crm-form-row">
+              <div class="crm-form-group">
+                <label class="crm-label">Ціна пошиву (грн/м)</label>
+                <select class="crm-input crm-calc" name="PoshivPrice__c">
+                  <option value="">— —</option>
+                  <option value="150">150</option>
+                  <option value="160">160</option>
+                  <option value="180">180</option>
+                  <option value="200">200</option>
+                  <option value="220">220</option>
+                  <option value="240">240</option>
+                  <option value="260">260</option>
+                  <option value="280">280</option>
+                  <option value="300">300</option>
+                  <option value="320">320</option>
+                  <option value="360">360</option>
+                </select>
+              </div>
+              <div class="crm-form-group">
+                <label class="crm-label">Ціна навісу (грн/м)</label>
+                <select class="crm-input crm-calc" name="NavisPrice__c">
+                  <option value="">— —</option>
+                  <option value="120">120</option>
+                  <option value="140">140</option>
+                  <option value="160">160</option>
+                  <option value="180">180</option>
+                  <option value="200">200</option>
+                </select>
+              </div>
+            </div>
+            <div class="crm-form-row">
+              <div class="crm-form-group">
+                <label class="crm-label">Доставка (грн)</label>
+                <select class="crm-input crm-calc" name="Delivery__c">
+                  <option value="">— —</option>
+                  <option value="65">65</option>
+                  <option value="80">80</option>
+                  <option value="100">100</option>
+                  <option value="120">120</option>
+                  <option value="150">150</option>
+                  <option value="180">180</option>
+                  <option value="200">200</option>
+                  <option value="220">220</option>
+                </select>
+              </div>
+              <div class="crm-form-group">
+                <label class="crm-label">К-ть доставок</label>
+                <select class="crm-input crm-calc" name="DeliveryNumber__c">
+                  <option value="">— —</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+            </div>
+            <div class="crm-form-row">
+              <div class="crm-form-group">
+                <div class="crm-checks">
+                  <label class="crm-check"><input type="checkbox" name="Navis__c" class="crm-calc"> Навіс</label>
+                  <label class="crm-check"><input type="checkbox" name="Viizd__c" class="crm-calc"> Виїзд (+500 грн)</label>
+                </div>
+              </div>
+              <div class="crm-form-group">
+                <label class="crm-label">Знижка / Надбавка</label>
+                <select class="crm-input crm-calc" name="CurtainDiscount__c">
+                  <option value="">— —</option>
+                  <option value="2">+2% надбавка</option>
+                  <option value="3">-3% знижка</option>
+                  <option value="4">+4% надбавка</option>
+                  <option value="5">-5% знижка</option>
+                  <option value="6">+6% надбавка</option>
+                  <option value="7">-7% знижка</option>
+                  <option value="8">+8% надбавка</option>
+                  <option value="10">+10% надбавка</option>
+                  <option value="13">-13% знижка</option>
+                  <option value="14">+14% надбавка</option>
+                  <option value="15">-15% знижка</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="crm-divider"></div>
+            <div class="crm-section-label">Додатково</div>
+            <div class="crm-form-row">
+              <div class="crm-form-group">
+                <label class="crm-label">Обробка низу</label>
+                <select class="crm-input" name="ObrobkaNiz__c">
+                  <option value="">— —</option>
+                  <option value="Обтяжувач">Обтяжувач</option>
+                  <option value="3 x 3 W">3 x 3 W</option>
+                  <option value="5 х 5 W">5 х 5 W</option>
+                  <option value="10 x 10 W">10 x 10 W</option>
+                  <option value="12 x 12 W">12 x 12 W</option>
+                </select>
+              </div>
+              <div class="crm-form-group">
+                <label class="crm-label">Статус</label>
+                <select class="crm-input" name="Status__c">
+                  <option value="На розгляді">На розгляді</option>
+                  <option value="Обрано кліентом">Обрано кліентом</option>
+                  <option value="Замовлено тканину">Замовлено тканину</option>
+                  <option value="В цеху">В цеху</option>
+                  <option value="Очікує видачі">Очікує видачі</option>
+                  <option value="Виконано">Виконано</option>
+                </select>
+              </div>
+            </div>
+            <div class="crm-form-group">
+              <label class="crm-label">Коментар</label>
+              <textarea class="crm-input" name="Description__c" rows="2" placeholder="Нотатки…"></textarea>
+            </div>
+
+            <!-- Live-розрахунок -->
+            <div class="crm-calc-preview">
+              <div class="crm-calc-title">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                Live-розрахунок
+              </div>
+              <div class="crm-calc-grid">
+                <div class="crm-calc-item"><span>Метраж тканини</span><strong id="ccMeterage">—</strong></div>
+                <div class="crm-calc-item"><span>На пошив</span><strong id="ccMeterageNaPoshiv">—</strong></div>
+                <div class="crm-calc-item"><span>Метраж тасьми</span><strong id="ccTasmaMetrage">—</strong></div>
+                <div class="crm-calc-item"><span>Навіс</span><strong id="ccNavisPrice">—</strong></div>
+                <div class="crm-calc-item"><span>Тасьма</span><strong id="ccTasmaPrice">—</strong></div>
+                <div class="crm-calc-item"><span>Пошив</span><strong id="ccPoshivPrice">—</strong></div>
+              </div>
+              <div class="crm-calc-total">
+                <span>ЗАГАЛЬНА ЦІНА</span>
+                <span class="crm-calc-total-val" id="ccTotalPrice">0 ₴</span>
+              </div>
+            </div>
+
+            <!-- Попередній перегляд -->
+            <div class="crm-canvas-section" id="crmCanvasSection" style="display:none">
+              <div class="crm-canvas-hd">
+                <span class="crm-section-label" style="margin:0">Попередній перегляд</span>
+                <button type="button" class="crm-btn crm-btn-outline crm-btn-sm" id="crmRefreshCanvas">Оновити</button>
+              </div>
+              <canvas id="crmCurtainCanvas" width="900" height="620"></canvas>
+              <div class="crm-canvas-actions">
+                <button type="button" class="crm-btn crm-btn-outline crm-btn-sm" id="crmDownloadImg">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                  Завантажити PNG
+                </button>
+                <button type="button" class="crm-btn crm-btn-outline crm-btn-sm" id="crmSaveImgToSF" style="display:none">Зберегти в SF</button>
+              </div>
+            </div>
+
+          </form>
+        </div>
+        <div class="crm-drawer-ft">
+          <button class="crm-btn crm-btn-outline" id="crmCancelCurtain">Скасувати</button>
+          <button type="button" class="crm-btn crm-btn-outline crm-btn-sm" id="crmPreviewCanvas">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 5C5.636 5 2 12 2 12s3.636 7 10 7 10-7 10-7-3.636-7-10-7z"/></svg>
+            Переглянути
+          </button>
+          <button class="crm-btn crm-btn-primary" id="crmSaveCurtain"><span id="crmSaveCurtainTxt">Зберегти в SF</span></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="crm-toasts" id="crmToasts"></div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="footer-logo">LAVANDA</a>
+                    <p>Преміум штори та домашній текстиль ручної роботи з 1999 року. Від вимірів до монтажу — повний цикл послуг.</p>
+                    <div class="footer-social">
+                        <a href="https://instagram.com/shtory_chayka" aria-label="Instagram" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+                        <a href="https://www.google.com/search?kgmid=/g/11vl0txv0h&q=%D0%A8%D1%82%D0%BE%D1%80%D0%B8+Lavanda#lrd=0x40d4cba8f09b4a5d:0x1056dab1fb5e490f,1,,,," aria-label="Google Reviews" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></a>
+                    </div>
+                </div>
+                <div class="footer-links"><h4>Колекції</h4><ul><li><a href="#">Штори</a></li><li><a href="#">Гардини / Тюль</a></li><li><a href="#">Римські штори</a></li><li><a href="#">Дабл блекаут</a></li></ul></div>
+                <div class="footer-links"><h4>Послуги</h4><ul><li><a href="#">Безкоштовний вимір*</a></li><li><a href="#">Пошив на замовлення</a></li><li><a href="#">Монтаж</a></li><li><a href="#">Дизайн консультація</a></li></ul></div>
+                <div class="footer-links"><h4>Контакти</h4><ul><li><a href="tel:+380509466745">+38 (050) 946-67-45</a></li><li><a href="#">ЖК Чайка, Лобановського 30А</a></li><li><a href="#">Бучанський р-н, біля Києва</a></li><li><a href="#">Пн–Сб: 9:00–19:00</a></li></ul></div>
+                <div class="footer-newsletter"><h4>Дизайн-натхнення</h4><p>Підпишіться на ідеї для вашого дому та ексклюзивні пропозиції.</p><form class="newsletter-form"><input type="email" aria-label="Email для підписки" placeholder="Ваш email"><button type="submit" aria-label="Підписатися"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></form></div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 1999 LAVANDA. Усі права захищено.</p>
+                <div class="footer-legal"><a href="#">Політика конфіденційності</a><a href="#">Умови</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="shared/lavanda-notify.js"></script>
+    <script src="script.js"></script>
+    <script src="shared/sf-api.js"></script>
+    <script src="shared/calculator.js"></script>
+    <script src="shared/curtain-image.js"></script>
+    <script src="shared/agent-mode.js"></script>
+    <script src="shared/instagram-agent.js"></script>
+
+    <script>
+    (function() {
+        document.addEventListener('DOMContentLoaded', function() {
+            var tabCrm  = document.getElementById('tabCrm');
+            var tabIg   = document.getElementById('tabInstagram');
+            var crmBody = document.getElementById('crmBody');
+            var igPanel = document.getElementById('igPanel');
+            var crmTopR = document.getElementById('crmTopRight');
+            if (!tabCrm || !tabIg) return;
+            tabCrm.addEventListener('click', function() {
+                tabCrm.classList.add('active'); tabIg.classList.remove('active');
+                if (crmBody) crmBody.style.display = '';
+                if (igPanel) igPanel.style.display = 'none';
+                if (crmTopR) crmTopR.style.display = '';
+            });
+            tabIg.addEventListener('click', function() {
+                tabIg.classList.add('active'); tabCrm.classList.remove('active');
+                if (crmBody) crmBody.style.display = 'none';
+                if (igPanel) igPanel.style.display = 'block';
+                if (crmTopR) crmTopR.style.display = 'none';
+                if (window.InstagramAgent) InstagramAgent.init();
+            });
+        });
+    })();
+    </script>
+</body>
+</html>

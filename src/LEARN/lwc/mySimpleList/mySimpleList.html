@@ -1,0 +1,19 @@
+<!--
+ - Created by KostiantynMarchenkov on 7/10/2025.
+ -->
+
+<!-- My Simple List -->
+<template>
+    <lightning-card>
+        <ul class="slds-m-around_medium">
+            <template for:each={list} for:item="item">
+                <li class="slds-list__item" key={item.phone}>
+                    <span class="slds-text-title_bold">{item.name}  {item.phone}</span>
+                </li>
+            </template>
+        </ul>
+        <lightning-input type="text" label="Input Field" placeholder={accountName}
+                         onchange={handleChange}></lightning-input>
+        <c-child-component value-from-parent={value}></c-child-component>
+    </lightning-card>
+</template>
