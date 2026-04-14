@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CurtainsInProcess</fullName>
+    <columns>Contact__c</columns>
+    <columns>Name__c</columns>
+    <columns>NAME</columns>
+    <columns>Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Замовлено тканину,В цеху</value>
+    </filters>
+    <label>Штори в роботі</label>
+</ListView>

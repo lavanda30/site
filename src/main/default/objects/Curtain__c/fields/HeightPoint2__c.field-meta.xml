@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HeightPoint2__c</fullName>
+    <label>Точка Висоти</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>від краю до краю</fullName>
+                <default>false</default>
+                <label>від краю до краю</label>
+            </value>
+            <value>
+                <fullName>до карнізу</fullName>
+                <default>false</default>
+                <label>до карнізу</label>
+            </value>
+            <value>
+                <fullName>до гачка</fullName>
+                <default>false</default>
+                <label>до гачка</label>
+            </value>
+            <value>
+                <fullName>до верхньої петлі</fullName>
+                <default>false</default>
+                <label>до верхньої петлі</label>
+            </value>
+            <value>
+                <fullName>до другої петлі</fullName>
+                <default>false</default>
+                <label>до другої петлі</label>
+            </value>
+            <value>
+                <fullName>до нижньої петлі</fullName>
+                <default>false</default>
+                <label>до нижньої петлі</label>
+            </value>
+            <value>
+                <fullName>до тасьми</fullName>
+                <default>false</default>
+                <label>до тасьми</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

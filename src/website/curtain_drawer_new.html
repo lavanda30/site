@@ -1,0 +1,289 @@
+    <!-- Curtain Drawer — всі поля 1:1 з Salesforce -->
+    <div class="crm-overlay crm-modal-overlay" id="crmCurtainOverlay"><div class="crm-drawer crm-drawer-wide"><div class="crm-drawer-hd"><span class="crm-drawer-title" id="crmCurtainDrawerTitle">Нова штора</span><button class="crm-drawer-close" id="crmCloseCurtainDrawer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div><div class="crm-drawer-body"><form id="crmCurtainForm" autocomplete="off">
+
+<div class="crm-section-label">Основна інформація</div>
+<div class="crm-form-row">
+  <div class="crm-form-group">
+    <label class="crm-label">Тип *</label>
+    <select class="crm-input" name="Type__c" required>
+      <option value="">— Оберіть —</option>
+      <option value="Штора">Штора</option>
+      <option value="Тюль">Тюль</option>
+    </select>
+  </div>
+  <div class="crm-form-group">
+    <label class="crm-label">Кімната</label>
+    <input type="text" class="crm-input" name="Room__c" placeholder="Спальня…">
+  </div>
+</div>
+<div class="crm-form-group">
+  <label class="crm-label">Назва тканини</label>
+  <input type="text" class="crm-input" name="Name__c" placeholder="Назва або артикул">
+</div>
+
+<div class="crm-divider"></div>
+<div class="crm-section-label">Розміри</div>
+<div class="crm-form-row">
+  <div class="crm-form-group">
+    <label class="crm-label">Ширина карнізу (см)</label>
+    <input type="number" class="crm-input crm-calc" name="CarnizWigth__c" placeholder="300">
+  </div>
+  <div class="crm-form-group">
+    <label class="crm-label">або ширина тканини вручну (см)</label>
+    <input type="number" class="crm-input crm-calc" name="CustomWigth__c">
+  </div>
+</div>
+<div class="crm-form-row">
+  <div class="crm-form-group">
+    <label class="crm-label">Висота (см)</label>
+    <input type="number" class="crm-input" name="Height__c" placeholder="280">
+  </div>
+  <div class="crm-form-group">
+    <label class="crm-label">Точка висоти</label>
+    <select class="crm-input" name="HeightPoint__c">
+      <option value="">— —</option>
+      <option value="від краю до краю">від краю до краю</option>
+      <option value="до карнізу">до карнізу</option>
+      <option value="до гачка">до гачка</option>
+      <option value="до верхньої петлі">до верхньої петлі</option>
+      <option value="до другої петлі">до другої петлі</option>
+      <option value="до нижньої петлі">до нижньої петлі</option>
+      <option value="до тасьми">до тасьми</option>
+    </select>
+  </div>
+</div>
+<div class="crm-form-group crm-form-group-sm">
+  <label class="crm-label">Кількість (шт.)</label>
+  <select class="crm-input crm-calc" name="Quantity__c">
+    <option value="1" selected>1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+  </select>
+</div>
+
+<div class="crm-divider"></div>
+<div class="crm-section-label">Збірка та тасьма</div>
+<div class="crm-form-row">
+  <div class="crm-form-group">
+    <label class="crm-label">Тип збірки</label>
+    <select class="crm-input crm-calc" name="CoefficientZbirki__c">
+      <option value="">— —</option>
+      <option value="Enigma 1:1,5">Enigma 1:1,5</option>
+      <option value="Enigma 1:1,65">Enigma 1:1,65</option>
+      <option value="Enigma 1:1,8">Enigma 1:1,8</option>
+      <option value="Enigma 1:2">Enigma 1:2</option>
+      <option value="Enigma 1:2,5">Enigma 1:2,5</option>
+      <option value="Enigma 1:3">Enigma 1:3</option>
+      <option value="Sofora 1:1,8">Sofora 1:1,8</option>
+      <option value="Sofora 1:2">Sofora 1:2</option>
+      <option value="Pinella">Pinella ×1</option>
+      <option value="Хвиля 1:1,5">Хвиля 1:1,5</option>
+      <option value="Хвиля 1:2">Хвиля 1:2</option>
+      <option value="Люверсна">Люверсна ×2</option>
+      <option value="Глайдерна 1:2 + FES">Глайдерна 1:2 + FES</option>
+    </select>
+  </div>
+  <div class="crm-form-group">
+    <label class="crm-label">Збірка тасьми</label>
+    <select class="crm-input" name="zbirkaTasmu__c">
+      <option value="">— —</option>
+      <option value="Enigma">Enigma</option>
+      <option value="Sofora">Sofora</option>
+      <option value="Хвиля">Хвиля</option>
+      <option value="Люверсна">Люверсна</option>
+      <option value="Глайдерна">Глайдерна</option>
+    </select>
+  </div>
+</div>
+<div class="crm-form-row">
+  <div class="crm-form-group">
+    <label class="crm-label">Тасьма</label>
+    <select class="crm-input" name="Tasma__c">
+      <option value="">— —</option>
+      <option value="Прозора фіксована">Прозора фіксована</option>
+      <option value="ХБ фіксована">ХБ фіксована</option>
+      <option value="Не фіксована">Не фіксована</option>
+    </select>
+  </div>
+  <div class="crm-form-group">
+    <label class="crm-label">Місце тасьми</label>
+    <input type="text" class="crm-input" name="TasmaPlace__c" placeholder="в край, посередині…">
+  </div>
+</div>
+
+<div class="crm-divider"></div>
+<div class="crm-section-label">Ціни (грн/м)</div>
+<div class="crm-form-row">
+  <div class="crm-form-group">
+    <label class="crm-label">Ціна тканини (грн/м)</label>
+    <input type="number" class="crm-input crm-calc" name="Price__c" placeholder="0" min="0">
+  </div>
+  <div class="crm-form-group">
+    <label class="crm-label">Ціна тасьми (грн/м)</label>
+    <select class="crm-input crm-calc" name="TasmaPrice__c">
+      <option value="">— —</option>
+      <option value="35">35</option>
+      <option value="45">45</option>
+      <option value="55">55</option>
+      <option value="65">65</option>
+      <option value="85">85</option>
+      <option value="110">110</option>
+      <option value="130">130</option>
+      <option value="140">140</option>
+      <option value="150">150</option>
+      <option value="160">160</option>
+      <option value="230">230</option>
+    </select>
+  </div>
+</div>
+<div class="crm-form-row">
+  <div class="crm-form-group">
+    <label class="crm-label">Ціна пошиву (грн/м)</label>
+    <select class="crm-input crm-calc" name="PoshivPrice__c">
+      <option value="">— —</option>
+      <option value="150">150</option>
+      <option value="160">160</option>
+      <option value="180">180</option>
+      <option value="200">200</option>
+      <option value="220">220</option>
+      <option value="240">240</option>
+      <option value="260">260</option>
+      <option value="280">280</option>
+      <option value="300">300</option>
+      <option value="320">320</option>
+      <option value="360">360</option>
+    </select>
+  </div>
+  <div class="crm-form-group">
+    <label class="crm-label">Ціна навісу (грн/м)</label>
+    <select class="crm-input crm-calc" name="NavisPrice__c">
+      <option value="">— —</option>
+      <option value="120">120</option>
+      <option value="140">140</option>
+      <option value="160">160</option>
+      <option value="180">180</option>
+      <option value="200">200</option>
+    </select>
+  </div>
+</div>
+<div class="crm-form-row">
+  <div class="crm-form-group">
+    <label class="crm-label">Доставка (грн)</label>
+    <select class="crm-input crm-calc" name="Delivery__c">
+      <option value="">— —</option>
+      <option value="65">65</option>
+      <option value="80">80</option>
+      <option value="100">100</option>
+      <option value="120">120</option>
+      <option value="150">150</option>
+      <option value="180">180</option>
+      <option value="200">200</option>
+      <option value="220">220</option>
+    </select>
+  </div>
+  <div class="crm-form-group">
+    <label class="crm-label">К-ть доставок</label>
+    <select class="crm-input crm-calc" name="DeliveryNumber__c">
+      <option value="">— —</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select>
+  </div>
+</div>
+<div class="crm-form-row">
+  <div class="crm-form-group">
+    <div class="crm-checks">
+      <label class="crm-check"><input type="checkbox" name="Navis__c" class="crm-calc"> Навіс</label>
+      <label class="crm-check"><input type="checkbox" name="Viizd__c" class="crm-calc"> Виїзд (+500 грн)</label>
+    </div>
+  </div>
+  <div class="crm-form-group">
+    <label class="crm-label">Знижка / Надбавка</label>
+    <select class="crm-input crm-calc" name="CurtainDiscount__c">
+      <option value="">— —</option>
+      <option value="2">+2% надбавка</option>
+      <option value="3">-3% знижка</option>
+      <option value="4">+4% надбавка</option>
+      <option value="5">-5% знижка</option>
+      <option value="6">+6% надбавка</option>
+      <option value="7">-7% знижка</option>
+      <option value="8">+8% надбавка</option>
+      <option value="10">+10% надбавка</option>
+      <option value="13">-13% знижка</option>
+      <option value="14">+14% надбавка</option>
+      <option value="15">-15% знижка</option>
+    </select>
+  </div>
+</div>
+
+<div class="crm-divider"></div>
+<div class="crm-section-label">Додатково</div>
+<div class="crm-form-row">
+  <div class="crm-form-group">
+    <label class="crm-label">Обробка низу</label>
+    <select class="crm-input" name="ObrobkaNiz__c">
+      <option value="">— —</option>
+      <option value="Обтяжувач">Обтяжувач</option>
+      <option value="3 x 3 W">3 x 3 W</option>
+      <option value="5 х 5 W">5 х 5 W</option>
+      <option value="10 x 10 W">10 x 10 W</option>
+      <option value="12 x 12 W">12 x 12 W</option>
+    </select>
+  </div>
+  <div class="crm-form-group">
+    <label class="crm-label">Статус</label>
+    <select class="crm-input" name="Status__c">
+      <option value="На розгляді">На розгляді</option>
+      <option value="Обрано клієнтом">Обрано клієнтом</option>
+      <option value="Замовлено тканину">Замовлено тканину</option>
+      <option value="В цеху">В цеху</option>
+      <option value="Очікує видачі">Очікує видачі</option>
+      <option value="Виконано">Виконано</option>
+    </select>
+  </div>
+</div>
+<div class="crm-form-group">
+  <label class="crm-label">Коментар</label>
+  <textarea class="crm-input" name="Description__c" rows="2" placeholder="Нотатки…"></textarea>
+</div>
+
+<!-- Live-розрахунок — всі поля як в SF -->
+<div class="crm-calc-preview">
+  <div class="crm-calc-title">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+    Live-розрахунок
+  </div>
+  <div class="crm-calc-grid">
+    <div class="crm-calc-item"><span>Метраж тканини</span><strong id="ccMeterage">—</strong></div>
+    <div class="crm-calc-item"><span>На пошив</span><strong id="ccMeterageNaPoshiv">—</strong></div>
+    <div class="crm-calc-item"><span>Метраж тасьми</span><strong id="ccTasmaMetrage">—</strong></div>
+    <div class="crm-calc-item"><span>Тканина</span><strong id="ccCurtainPrice">—</strong></div>
+    <div class="crm-calc-item"><span>Тасьма</span><strong id="ccTasmaPrice">—</strong></div>
+    <div class="crm-calc-item"><span>Пошив</span><strong id="ccPoshivPrice">—</strong></div>
+  </div>
+  <div class="crm-calc-total">
+    <span>ЗАГАЛЬНА ЦІНА</span>
+    <span class="crm-calc-total-val" id="ccTotalPrice">0 ₴</span>
+  </div>
+</div>
+
+<!-- Попередній перегляд -->
+<div class="crm-canvas-section" id="crmCanvasSection" style="display:none">
+  <div class="crm-canvas-hd">
+    <span class="crm-section-label" style="margin:0">Попередній перегляд</span>
+    <button type="button" class="crm-btn crm-btn-outline crm-btn-sm" id="crmRefreshCanvas">Оновити</button>
+  </div>
+  <canvas id="crmCurtainCanvas" width="900" height="620"></canvas>
+  <div class="crm-canvas-actions">
+    <button type="button" class="crm-btn crm-btn-outline crm-btn-sm" id="crmDownloadImg">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Завантажити PNG
+    </button>
+    <button type="button" class="crm-btn crm-btn-outline crm-btn-sm" id="crmSaveImgToSF" style="display:none">Зберегти в SF</button>
+  </div>
+</div>
+
+</form></div><div class="crm-drawer-ft"><button class="crm-btn crm-btn-outline" id="crmCancelCurtain">Скасувати</button><button type="button" class="crm-btn crm-btn-outline crm-btn-sm" id="crmPreviewCanvas"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 5C5.636 5 2 12 2 12s3.636 7 10 7 10-7 10-7-3.636-7-10-7z"/></svg> Переглянути</button><button class="crm-btn crm-btn-primary" id="crmSaveCurtain"><span id="crmSaveCurtainTxt">Зберегти в SF</span></button></div></div></div>

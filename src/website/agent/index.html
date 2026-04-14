@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAVANDA CRM</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ── LOGIN PAGE ─────────────────────────────────── -->
+<div id="loginPage">
+    <div class="login-card">
+        <div class="login-logo">LAVANDA</div>
+        <div class="login-subtitle">Система управління замовленнями</div>
+        <button class="btn-login" id="loginBtn">
+            Увійти через Salesforce
+        </button>
+        <p class="login-note">
+            Потребує авторизованого акаунту Salesforce.<br>
+            Дані зберігаються тільки на час сесії.
+        </p>
+    </div>
+</div>
+
+<!-- ── APP PAGE ───────────────────────────────────── -->
+<div id="appPage">
+
+    <!-- Header -->
+    <header class="crm-header">
+        <div class="header-logo">
+            LAVANDA
+            <span>CRM · Агентська панель</span>
+        </div>
+        <div class="header-right">
+            <span class="header-user" id="headerUser"></span>
+            <button class="btn-logout" id="logoutBtn">Вийти</button>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <div class="crm-main">
+
+        <!-- ── LEFT: CONTACTS ── -->
+        <aside class="contacts-panel">
+            <div class="panel-header">
+                <span class="panel-title">Контакти</span>
+                <button class="btn btn-primary btn-sm" id="newContactBtn">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+                    Новий
+                </button>
+            </div>
+            <div class="search-box">
+                <input type="text" class="search-input" id="contactSearch" placeholder="Пошук за ім'ям або телефоном...">
+            </div>
+            <div class="contacts-list" id="contactsList">
+                <div class="contacts-empty">Завантаження...</div>
+            </div>
+        </aside>
+
+        <!-- ── RIGHT: CURTAINS ── -->
+        <main class="curtains-panel">
+            <div class="curtains-header" id="curtainsHeader" style="display:none">
+                <div style="flex:1">
+                    <div class="contact-detail-name" id="selectedContactName"></div>
+                    <div class="contact-detail-meta" id="selectedContactMeta"></div>
+                </div>
+                <button class="btn btn-outline btn-sm" id="editContactBtn">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                    Редагувати
+                </button>
+                <button class="btn btn-primary btn-sm" id="newCurtainBtn">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+                    Нова штора
+                </button>
+            </div>
+
+            <div class="curtains-body" id="curtainsBody">
+                <div class="no-contact-placeholder">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    <p>Виберіть контакт зі списку</p>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<!-- ── CONTACT DRAWER ──────────────────────────────── -->
+<div class="modal-overlay" id="contactDrawerOverlay">
+    <div class="modal-drawer">
+        <div class="drawer-header">
+            <span class="drawer-title" id="contactDrawerTitle">Новий контакт</span>
+            <button class="btn-icon" id="closeContactDrawer">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+            </button>
+        </div>
+        <div class="drawer-body">
+            <form id="contactForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Ім'я *</label>
+                        <input type="text" class="form-control" name="Name" required placeholder="Ім'я та прізвище">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Телефон</label>
+                        <input type="tel" class="form-control" name="ClientName__c" placeholder="+380...">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Спец. умови (знижка %)</label>
+                        <select class="form-control" name="GeneralDiscount__c">
+                            <option value="">— Без знижки —</option>
+                            <option value="2">2%</option>
+                            <option value="3">3%</option>
+                            <option value="4">4%</option>
+                            <option value="5">5%</option>
+                            <option value="6">6%</option>
+                            <option value="7">7%</option>
+                            <option value="8">8%</option>
+                            <option value="10">10%</option>
+                            <option value="13">13%</option>
+                            <option value="14">14%</option>
+                            <option value="15">15%</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Адреса</label>
+                    <input type="text" class="form-control" name="Address__c" placeholder="Вулиця, будинок, квартира, місто">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Коментар</label>
+                    <textarea class="form-control" name="Description__c" rows="3" placeholder="Нотатки про клієнта..."></textarea>
+                </div>
+            </form>
+        </div>
+        <div class="drawer-footer">
+            <button class="btn btn-outline" id="cancelContactBtn">Скасувати</button>
+            <button class="btn btn-primary" id="saveContactBtn">
+                <span id="saveContactBtnText">Зберегти</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- ── CURTAIN DRAWER ───────────────────────────────── -->
+<div class="modal-overlay" id="curtainDrawerOverlay">
+    <div class="modal-drawer">
+        <div class="drawer-header">
+            <span class="drawer-title" id="curtainDrawerTitle">Нова штора</span>
+            <button class="btn-icon" id="closeCurtainDrawer">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+            </button>
+        </div>
+        <div class="drawer-body">
+            <form id="curtainForm">
+                <div class="form-section-title">Основна інформація</div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Тип *</label>
+                        <select class="form-control" name="Type__c" required>
+                            <option value="">— Оберіть —</option>
+                            <option value="Штора">Штора</option>
+                            <option value="Тюль">Тюль</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Кімната</label>
+                        <input type="text" class="form-control" name="Room__c" placeholder="Спальня, вітальня...">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Назва тканини</label>
+                    <input type="text" class="form-control" name="Name__c" placeholder="Назва артикулу або тканини">
+                </div>
+
+                <div class="form-divider"></div>
+                <div class="form-section-title">Розміри</div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Ширина карнізу (см)</label>
+                        <input type="number" class="form-control calc-input" name="CarnizWigth__c" placeholder="300" min="50" max="1000">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Або вручну ширину тканини (см)</label>
+                        <input type="number" class="form-control calc-input" name="CustomWigth__c" placeholder="600">
+                        <div class="form-hint">Якщо заповнено — перекриває ширину карнізу</div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Висота (см)</label>
+                        <input type="number" class="form-control" name="Height__c" placeholder="280">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Точка висоти</label>
+                        <select class="form-control" name="HeightPoint__c">
+                            <option value="">— Оберіть —</option>
+                            <option value="від краю до краю">від краю до краю</option>
+                            <option value="до карнізу">до карнізу</option>
+                            <option value="до гачка">до гачка</option>
+                            <option value="до верхньої петлі">до верхньої петлі</option>
+                            <option value="до другої петлі">до другої петлі</option>
+                            <option value="до нижньої петлі">до нижньої петлі</option>
+                            <option value="до тасьми">до тасьми</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Кількість (шт.)</label>
+                    <input type="number" class="form-control calc-input" name="Quantity__c" value="1" min="1" max="20">
+                </div>
+
+                <div class="form-divider"></div>
+                <div class="form-section-title">Збірка та тасьма</div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Тип збірки (коефіцієнт)</label>
+                        <select class="form-control calc-input" name="CoefficientZbirki__c">
+                            <option value="">— Оберіть —</option>
+                            <option value="Enigma 1:1,5">Enigma 1:1,5</option>
+                            <option value="Enigma 1:1,65">Enigma 1:1,65</option>
+                            <option value="Enigma 1:1,8">Enigma 1:1,8</option>
+                            <option value="Enigma 1:2" selected>Enigma 1:2</option>
+                            <option value="Enigma 1:2,5">Enigma 1:2,5</option>
+                            <option value="Enigma 1:3">Enigma 1:3</option>
+                            <option value="Sofora 1:1,8">Sofora 1:1,8</option>
+                            <option value="Sofora 1:2">Sofora 1:2</option>
+                            <option value="Pinella">Pinella ×1</option>
+                            <option value="Хвиля 1:2">Хвиля 1:2</option>
+                            <option value="Хвиля 1:1,5">Хвиля 1:1,5</option>
+                            <option value="Люверсна">Люверсна ×2</option>
+                            <option value="Глайдерна 1:2 + FES">Глайдерна 1:2 + FES</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Збірка</label>
+                        <select class="form-control" name="Zbirka__c">
+                            <option value="">— Оберіть —</option>
+                            <option>Enigma</option>
+                            <option>Sofora</option>
+                            <option>Хвиля</option>
+                            <option>Люверсна</option>
+                            <option>Глайдерна</option>
+                            <option>Pinella</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Збірка тасьми</label>
+                        <select class="form-control" name="zbirkaTasmu__c">
+                            <option value="">— Оберіть —</option>
+                            <option>Enigma</option>
+                            <option>Sofora</option>
+                            <option>Хвиля</option>
+                            <option>Люверсна</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Тасьма</label>
+                        <select class="form-control" name="Tasma__c">
+                            <option value="">— Оберіть —</option>
+                            <option value="Прозора фіксована">Прозора фіксована</option>
+                            <option value="ХБ фіксована">ХБ фіксована</option>
+                            <option value="Не фіксована">Не фіксована</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Місце тасьми</label>
+                    <input type="text" class="form-control" name="TasmaPlace__c" placeholder="Зверху, посередині...">
+                </div>
+
+                <div class="form-divider"></div>
+                <div class="form-section-title">Ціни (грн/м)</div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Ціна тканини</label>
+                        <input type="number" class="form-control calc-input" name="Price__c" placeholder="0">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Ціна тасьми</label>
+                        <input type="number" class="form-control calc-input" name="TasmaPrice__c" placeholder="0">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Ціна пошиву</label>
+                        <input type="number" class="form-control calc-input" name="PoshivPrice__c" placeholder="0">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Ціна навісу</label>
+                        <input type="number" class="form-control calc-input" name="NavisPrice__c" placeholder="0">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="check-row">
+                            <input type="checkbox" name="Navis__c" class="calc-input"> Навіс
+                        </label>
+                        <label class="check-row">
+                            <input type="checkbox" name="Viizd__c" class="calc-input"> Виїзд (+500 грн)
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Доставка (грн)</label>
+                        <select class="form-control calc-input" name="Delivery__c">
+                            <option value="">— —</option>
+                            <option value="65">65</option>
+                            <option value="80">80</option>
+                            <option value="100">100</option>
+                            <option value="120">120</option>
+                            <option value="150">150</option>
+                            <option value="180">180</option>
+                            <option value="200">200</option>
+                            <option value="220">220</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">К-ть доставок</label>
+                        <select class="form-control calc-input" name="DeliveryNumber__c">
+                            <option value="">— —</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Знижка</label>
+                        <select class="form-control calc-input" name="CurtainDiscount__c">
+                            <option value="">— —</option>
+                            <option value="2">2% (надбавка)</option>
+                            <option value="3">3% (знижка)</option>
+                            <option value="4">4% (надбавка)</option>
+                            <option value="5">5% (знижка)</option>
+                            <option value="7">7% (знижка)</option>
+                            <option value="10">10% (надбавка)</option>
+                            <option value="15">15% (знижка)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-divider"></div>
+                <div class="form-section-title">Додатково</div>
+
+                <div class="form-group">
+                    <label class="form-label">Обробка низу</label>
+                    <select class="form-control" name="ObrobkaNiz__c">
+                        <option value="">— Оберіть —</option>
+                        <option value="Обтяжувач">Обтяжувач</option>
+                        <option value="3 x 3 W">3 x 3 W</option>
+                        <option value="5 х 5 W">5 х 5 W</option>
+                        <option value="10 x 10 W">10 x 10 W</option>
+                        <option value="12 x 12 W">12 x 12 W</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Коментар</label>
+                    <textarea class="form-control" name="Description__c" rows="2" placeholder="Нотатки..."></textarea>
+                </div>
+
+                <!-- Calculated preview -->
+                <div class="calc-preview" id="calcPreview">
+                    <div class="calc-preview-title">⚡ Розрахунок (live preview)</div>
+                    <div class="calc-grid">
+                        <div class="calc-item">
+                            <span class="calc-item-label">Метраж тканини</span>
+                            <span class="calc-item-value" id="calcMeterage">—</span>
+                        </div>
+                        <div class="calc-item">
+                            <span class="calc-item-label">Метраж на пошив</span>
+                            <span class="calc-item-value" id="calcMeterageNaPoshiv">—</span>
+                        </div>
+                        <div class="calc-item">
+                            <span class="calc-item-label">Метраж тасьми</span>
+                            <span class="calc-item-value" id="calcTasmaMetrage">—</span>
+                        </div>
+                        <div class="calc-item">
+                            <span class="calc-item-label">Вартість тканини</span>
+                            <span class="calc-item-value" id="calcCurtainPrice">—</span>
+                        </div>
+                        <div class="calc-item">
+                            <span class="calc-item-label">Вартість тасьми</span>
+                            <span class="calc-item-value" id="calcTasmaPrice">—</span>
+                        </div>
+                        <div class="calc-item">
+                            <span class="calc-item-label">Вартість пошиву</span>
+                            <span class="calc-item-value" id="calcPoshivPrice">—</span>
+                        </div>
+                    </div>
+                    <div class="calc-total">
+                        <span class="calc-total-label">ЗАГАЛЬНА ЦІНА</span>
+                        <span class="calc-total-price" id="calcTotalPrice">0 ₴</span>
+                    </div>
+                </div>
+
+                <!-- Canvas image section -->
+                <div class="canvas-section" id="canvasSection" style="display:none">
+                    <div class="canvas-section-header">
+                        <span class="form-section-title" style="margin:0">Попередній перегляд</span>
+                        <button type="button" class="btn btn-outline btn-sm" id="refreshCanvasBtn">Оновити</button>
+                    </div>
+                    <canvas id="curtainCanvas" width="850" height="600"></canvas>
+                    <div class="canvas-actions">
+                        <button type="button" class="btn btn-outline btn-sm" id="downloadImgBtn">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            Зберегти зображення
+                        </button>
+                        <button type="button" class="btn btn-outline btn-sm" id="saveImgToSFBtn" style="display:none">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+                            Зберегти в Salesforce
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="drawer-footer">
+            <button class="btn btn-outline" id="cancelCurtainBtn">Скасувати</button>
+            <button type="button" class="btn btn-outline btn-sm" id="previewCurtainBtn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 5C5.636 5 2 12 2 12s3.636 7 10 7 10-7 10-7-3.636-7-10-7z"/></svg>
+                Переглянути
+            </button>
+            <button class="btn btn-primary" id="saveCurtainBtn">
+                <span id="saveCurtainBtnText">Зберегти в SF</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Toast container -->
+<div class="toast-container" id="toastContainer"></div>
+
+<script src="../shared/sf-api.js"></script>
+<script src="../shared/calculator.js"></script>
+<script src="../shared/curtain-image.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
+

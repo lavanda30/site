@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Carniz__c</fullName>
+    <label>Карніз</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>gardinia</fullName>
+                <default>false</default>
+                <label>Gardinia</label>
+            </value>
+            <value>
+                <fullName>alutat</fullName>
+                <default>false</default>
+                <label>Alutat</label>
+            </value>
+            <value>
+                <fullName>ks</fullName>
+                <default>false</default>
+                <label>KS</label>
+            </value>
+            <value>
+                <fullName>lux</fullName>
+                <default>false</default>
+                <label>Lux S-M</label>
+            </value>
+            <value>
+                <fullName>ds</fullName>
+                <default>false</default>
+                <label>DS</label>
+            </value>
+            <value>
+                <fullName>circle</fullName>
+                <default>false</default>
+                <label>Круглий</label>
+            </value>
+            <value>
+                <fullName>metal</fullName>
+                <default>false</default>
+                <label>Металічний П-обр крючок</label>
+            </value>
+            <value>
+                <fullName>other</fullName>
+                <default>false</default>
+                <label>Інший</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

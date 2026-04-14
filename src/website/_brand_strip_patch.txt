@@ -1,0 +1,8 @@
+<!-- Brand Strip правильні цифри -->
+                <div class="brand-stat"><strong>700+</strong><span>задоволених клієнтів</span></div>
+                <div class="brand-divider"></div>
+                <div class="brand-stat"><strong>25+ років</strong><span>досвіду, з 1999 року</span></div>
+                <div class="brand-divider"></div>
+                <div class="brand-stat"><strong>Якісні матеріали</strong><span>перевірені тканини</span></div>
+                <div class="brand-divider"></div>
+                <div class="brand-stat"><strong>Пошив</strong><span>заміри, пошив, монтаж</span></div>

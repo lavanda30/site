@@ -1,0 +1,457 @@
+/* ============================================================
+   LAVANDA styles-v3.css — v3.1
+   ============================================================ */
+
+/* ── Іконки тканин — Штора (яскрава, помітна) ──────────── */
+.fabric-swatch-curtain {
+    position: relative;
+    background:
+        repeating-linear-gradient(
+            100deg,
+            rgba(255,255,255,0.12) 0px,
+            rgba(255,255,255,0.12) 3px,
+            transparent 3px,
+            transparent 12px
+        ),
+        linear-gradient(150deg,
+            #7B2D2D 0%,
+            #C04848 25%,
+            #8E44AD 60%,
+            #5B2C6F 100%
+        );
+    border: 3px solid rgba(139, 44, 44, 0.55) !important;
+    box-shadow: 0 3px 12px rgba(139,44,44,0.3);
+}
+
+.fabric-option input:checked + .fabric-swatch-curtain {
+    border-color: #2B2B2B !important;
+    box-shadow: 0 0 0 3px rgba(43,43,43,0.2), 0 3px 12px rgba(139,44,44,0.35);
+}
+
+/* ── Іконки тканин — Гардина (сіточка, прозора) ────────── */
+.fabric-swatch-gardina {
+    background:
+        repeating-linear-gradient(
+            0deg,
+            rgba(43,43,43,0.22) 0px,
+            rgba(43,43,43,0.22) 1px,
+            transparent 1px,
+            transparent 8px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            rgba(43,43,43,0.22) 0px,
+            rgba(43,43,43,0.22) 1px,
+            transparent 1px,
+            transparent 8px
+        ),
+        #FAFAF8;
+    border: 2px solid rgba(43,43,43,0.2) !important;
+}
+
+.fabric-option input:checked + .fabric-swatch-gardina {
+    border-color: #2B2B2B !important;
+    box-shadow: 0 0 0 3px rgba(43,43,43,0.15);
+}
+
+/* ── Збірка тасьми — SVG-іконки (як оригінал, але × 1.5/2/2.5/3 + Люверси) ── */
+.gather-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.gather-option {
+    cursor: pointer;
+    text-align: center;
+}
+
+.gather-option input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* SVG-іконка збірки */
+.gather-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 46px;
+    border: 2px solid var(--color-beige);
+    border-radius: 8px;
+    margin: 0 auto 0.3rem;
+    background: var(--color-white);
+    transition: var(--transition-base);
+}
+
+.gather-icon svg {
+    width: 32px;
+    height: 32px;
+    color: var(--color-graphite-light);
+    transition: var(--transition-base);
+}
+
+.gather-option input:checked + .gather-icon {
+    border-color: var(--color-graphite);
+    background: var(--color-beige);
+}
+
+.gather-option input:checked + .gather-icon svg {
+    color: var(--color-graphite);
+}
+
+.gather-option:hover .gather-icon {
+    border-color: var(--color-lavender-dark);
+}
+
+.gather-coeff-label {
+    display: block;
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: var(--color-lavender-dark);
+    letter-spacing: 0.02em;
+}
+
+.gather-name-label {
+    display: block;
+    font-size: 0.68rem;
+    color: var(--color-graphite-light);
+    margin-top: 1px;
+}
+
+/* ── Слайдер якості — без підказки ціни тканини ────────── */
+.quality-slider-wrap {
+    margin-top: 0.5rem;
+}
+
+/* Приховати будь-який елемент з ціною тканини */
+#qualityPriceHint {
+    display: none !important;
+}
+
+.quality-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 5px;
+    border-radius: 3px;
+    background: linear-gradient(to right, #9A8BB3 50%, #e8dde8 50%);
+    outline: none;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+    transition: background 0.2s;
+}
+
+.quality-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--color-graphite);
+    cursor: pointer;
+    border: 3px solid #fff;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.22);
+    transition: transform 0.15s ease;
+}
+
+.quality-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.18);
+    background: var(--color-lavender-dark);
+}
+
+.quality-slider::-moz-range-thumb {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--color-graphite);
+    cursor: pointer;
+    border: 3px solid #fff;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.22);
+}
+
+.quality-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.67rem;
+    color: var(--color-graphite-light);
+    margin-top: 0.3rem;
+    padding: 0 3px;
+}
+
+.quality-labels .quality-mid {
+    font-weight: 600;
+    color: var(--color-lavender-dark);
+}
+
+/* ── Підсумкова ціна — більш помітна ────────────────────── */
+.summary-price-block {
+    flex: 1;
+}
+
+.summary-price-label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-graphite-light);
+    margin-bottom: 0.3rem;
+}
+
+.summary-price-value {
+    font-family: var(--font-heading) !important;
+    font-size: 2.1rem !important;
+    font-weight: 500 !important;
+    color: var(--color-graphite) !important;
+    display: block;
+    line-height: 1.1;
+}
+
+.summary-price-note {
+    font-size: 0.68rem;
+    color: var(--color-graphite-light);
+    opacity: 0.7;
+    margin-top: 0.4rem;
+    line-height: 1.5;
+}
+
+.config-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.config-summary .btn {
+    width: 100%;
+    padding: 1rem;
+    font-size: 0.88rem;
+}
+
+/* ── Попап результату розрахунку ────────────────────────── */
+.result-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(43,43,43,0.55);
+    backdrop-filter: blur(4px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    animation: fadeInOverlay 0.25s ease;
+}
+
+@keyframes fadeInOverlay {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.result-modal {
+    background: var(--color-white);
+    border-radius: 20px;
+    width: 100%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.25);
+    position: relative;
+    animation: slideUpModal 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+@keyframes slideUpModal {
+    from { transform: translateY(30px); opacity: 0; }
+    to   { transform: translateY(0);    opacity: 1; }
+}
+
+.result-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--color-beige);
+    border-radius: 50%;
+    font-size: 0.85rem;
+    color: var(--color-graphite-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition-base);
+    background: var(--color-white);
+}
+
+.result-close:hover { background: var(--color-beige); }
+
+.result-header {
+    text-align: center;
+    padding: 2rem 2rem 1rem;
+    border-bottom: 1px solid var(--color-beige);
+}
+
+.result-logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    color: var(--color-graphite);
+    margin-bottom: 0.3rem;
+}
+
+.result-sub {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-graphite-light);
+}
+
+.result-params {
+    padding: 1.25rem 2rem;
+    border-bottom: 1px solid var(--color-beige);
+}
+
+.result-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(245,239,230,0.7);
+    font-size: 0.88rem;
+}
+
+.result-row:last-child { border-bottom: none; }
+
+.result-label { color: var(--color-graphite-light); font-size: 0.82rem; }
+
+.result-value { font-weight: 500; color: var(--color-graphite); text-align: right; }
+
+.result-color-row { display: flex; align-items: center; gap: 0.5rem; }
+
+.result-color-dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1);
+}
+
+.result-price-block {
+    text-align: center;
+    padding: 1.5rem 2rem;
+    background: linear-gradient(135deg, #F8F5FF 0%, #F0EDE8 100%);
+    border-bottom: 1px solid var(--color-beige);
+}
+
+.result-price-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-graphite-light);
+    margin-bottom: 0.5rem;
+}
+
+.result-price-value {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: var(--color-graphite);
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+}
+
+.result-price-note {
+    font-size: 0.7rem;
+    color: var(--color-graphite-light);
+    opacity: 0.75;
+    line-height: 1.5;
+    max-width: 340px;
+    margin: 0 auto;
+}
+
+.result-form {
+    padding: 1.5rem 2rem 2rem;
+}
+
+.result-form-title {
+    font-size: 0.85rem;
+    color: var(--color-graphite-light);
+    text-align: center;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.result-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+    margin-bottom: 0.75rem;
+}
+
+.result-input {
+    width: 100%;
+    padding: 0.7rem 0.9rem;
+    border: 1.5px solid var(--color-beige);
+    border-radius: 10px;
+    font-family: var(--font-body);
+    font-size: 0.88rem;
+    color: var(--color-graphite);
+    background: var(--color-white);
+    outline: none;
+    transition: var(--transition-base);
+}
+
+.result-input:focus {
+    border-color: var(--color-lavender);
+    box-shadow: 0 0 0 3px rgba(200,182,226,0.2);
+}
+
+.result-input::placeholder { color: rgba(43,43,43,0.35); }
+
+.result-sent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+    padding: 0.75rem;
+    background: #f0fdf4;
+    border-radius: 10px;
+    color: #16a34a;
+    font-size: 0.88rem;
+    font-weight: 500;
+}
+
+/* ── Google Reviews link ─────────────────────────────────── */
+.google-reviews-link {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #4285F4;
+    text-decoration: none;
+    padding: 0.55rem 1.25rem;
+    border: 1px solid #dadce0;
+    border-radius: 24px;
+    background: #fff;
+    transition: background 0.2s, box-shadow 0.2s;
+    gap: 6px;
+}
+
+.google-reviews-link:hover {
+    background: #f8f9ff;
+    box-shadow: 0 2px 10px rgba(66,133,244,0.15);
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 480px) {
+    .gather-options { gap: 0.4rem; }
+    .gather-icon { width: 52px; height: 40px; }
+    .result-form-row { grid-template-columns: 1fr; }
+    .result-modal { border-radius: 16px; }
+    .result-price-value { font-size: 2rem; }
+}
